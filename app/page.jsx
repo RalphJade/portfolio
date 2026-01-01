@@ -1,7 +1,7 @@
 'use client';
 
 import { Mail, Github, Linkedin, ExternalLink } from 'lucide-react';
-import LiquidEther from './LiquidEther';
+import Lanyard from './Lanyard';
 
 export default function Home() {
   const projects = [
@@ -51,51 +51,30 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 sm:py-32" style={{ minHeight: '600px' }}>
-        {/* Background that extends full width */}
-        <div className="absolute inset-0 w-full" style={{ zIndex: 0 }}>
-          <LiquidEther
-            colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
-            mouseForce={20}
-            cursorSize={100}
-            isViscous={false}
-            viscous={30}
-            iterationsViscous={32}
-            iterationsPoisson={32}
-            resolution={0.5}
-            isBounce={false}
-            autoDemo={true}
-            autoSpeed={0.5}
-            autoIntensity={2.2}
-            takeoverDuration={0.25}
-            autoResumeDelay={3000}
-            autoRampDuration={0.6}
-            style={{ width: '100%', height: '100%' }}
-          />
+      <section className="relative overflow-hidden min-h-screen flex items-center">
+        <div className="absolute inset-0 -z-10 w-full h-full">
+          <Lanyard />
         </div>
-        {/* Content container with max-width */}
-        <div className="max-w-4xl mx-auto px-6 relative" style={{ zIndex: 10 }}>
-          <div className="space-y-6">
-            <h1 className="text-5xl sm:text-6xl font-bold tracking-tight">
-              Hi, I'm a Full-Stack Developer
-            </h1>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl">
-              I create beautiful, functional web applications that solve real problems. Specialized in modern web technologies and user-centric design.
-            </p>
-            <div className="flex gap-4 pt-4">
-              <a
-                href="#contact"
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Get in touch
-              </a>
-              <a
-                href="#projects"
-                className="px-6 py-3 border border-zinc-300 dark:border-zinc-700 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
-              >
-                View my work
-              </a>
-            </div>
+        <div className="max-w-4xl mx-auto px-6 space-y-6 relative z-10 w-full">
+          <h1 className="text-5xl sm:text-6xl font-bold tracking-tight">
+            Hi, I'm a Full-Stack Developer
+          </h1>
+          <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl">
+            I create beautiful, functional web applications that solve real problems. Specialized in modern web technologies and user-centric design.
+          </p>
+          <div className="flex gap-4 pt-4">
+            <a
+              href="#contact"
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Get in touch
+            </a>
+            <a
+              href="#projects"
+              className="px-6 py-3 border border-zinc-300 dark:border-zinc-700 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+            >
+              View my work
+            </a>
           </div>
         </div>
       </section>
