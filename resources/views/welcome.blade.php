@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio | Interactive Card View</title>
+    <title>Ralph Jade A. Omega | IT Specialist Portfolio</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,11 +104,11 @@
             <!-- Logo / Badge -->
             <div class="flex items-center space-x-3">
                 <div class="w-8 h-8 bg-amber-500 text-slate-950 font-pixel text-xs font-bold flex items-center justify-center border-2 border-amber-300 shadow-retro-sm">
-                    DEV
+                    IT
                 </div>
                 <div>
-                    <h1 class="font-pixel text-xs text-amber-400 tracking-wider">ALEX RIVERS</h1>
-                    <p class="font-monoRetro text-sm text-slate-400 tracking-widest uppercase">Full-Stack Web Engineer</p>
+                    <h1 class="font-pixel text-xs text-amber-400 tracking-wider">RALPH JADE A. OMEGA</h1>
+                    <p class="font-monoRetro text-sm text-slate-400 tracking-widest uppercase">IT Specialist & Security Strategist</p>
                 </div>
             </div>
 
@@ -117,7 +117,7 @@
                 <!-- Status Badge -->
                 <div class="hidden sm:flex items-center space-x-2 bg-slate-800 px-3 py-1 rounded border-2 border-slate-700">
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span class="font-monoRetro text-emerald-400 text-base">AVAILABLE FOR HIRE</span>
+                    <span class="font-monoRetro text-emerald-400 text-base">AVAILABLE FOR OPPORTUNITIES</span>
                 </div>
 
                 <!-- Theme / Layout Switcher -->
@@ -151,15 +151,16 @@
 
                 <!-- Avatar Card Photo -->
                 <div class="flex flex-col items-center shrink-0">
-                    <div class="w-36 h-36 md:w-44 md:h-44 bg-slate-900 border-4 border-slate-700 rounded p-2 shadow-retro relative group">
-                        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=AlexRiversDev&backgroundColor=0284c7"
-                             alt="Alex Rivers Avatar"
-                             class="w-full h-full object-cover rounded bg-slate-950">
-                        <span class="absolute -top-3 -right-3 bg-rose-500 text-white font-pixel text-[10px] px-2 py-1 rounded border-2 border-white shadow-retro-sm">
-                            PRO
+                    <div class="w-36 h-36 md:w-44 md:h-44 bg-slate-900 border-4 border-slate-700 rounded p-2 shadow-retro relative group flex items-center justify-center">
+                        <div class="w-full h-full bg-slate-950 rounded flex flex-col items-center justify-center text-center p-3 border border-slate-800">
+                            <span class="font-pixel text-3xl text-amber-400 mb-2">🛡️</span>
+                            <span class="font-pixel text-[10px] text-slate-300">RALPH OMEGA</span>
+                        </div>
+                        <span class="absolute -top-3 -right-3 bg-emerald-500 text-slate-950 font-pixel text-[10px] px-2 py-1 rounded border-2 border-white shadow-retro-sm font-bold">
+                            CERTIFIED
                         </span>
                     </div>
-                    <span class="mt-3 font-monoRetro text-amber-400 text-lg tracking-wider">ID: AR-8890-DEV</span>
+                    <span class="mt-3 font-monoRetro text-amber-400 text-lg tracking-wider">ID: RO-2026-IT</span>
                 </div>
 
                 <!-- Bio & Professional Summary -->
@@ -167,41 +168,44 @@
                     <div>
                         <div class="flex flex-wrap justify-center md:justify-start items-center gap-2 mb-2">
                             <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2.5 py-0.5 rounded text-xs font-monoRetro text-base font-semibold">
-                                ★ SENIOR SOFTWARE ENGINEER
+                                ★ IT SPECIALIST
                             </span>
                             <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-2.5 py-0.5 rounded text-xs font-monoRetro text-base font-semibold">
-                                7+ YEARS EXPERIENCE
+                                PUBLIC SPEAKER
+                            </span>
+                            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded text-xs font-monoRetro text-base font-semibold">
+                                ENTERPRISE INFRASTRUCTURE
                             </span>
                         </div>
                         <h2 class="font-pixel text-xl md:text-2xl text-white tracking-tight">
-                            ALEX RIVERS
+                            RALPH JADE A. OMEGA
                         </h2>
                         <p class="font-monoRetro text-xl text-cyan-400 tracking-wide mt-1">
-                            Building clean, performant & user-friendly web applications
+                            Enterprise Infrastructure • Cyber Threat Management • Artificial Intelligence
                         </p>
                     </div>
 
                     <p class="text-slate-300 text-base leading-relaxed max-w-3xl">
-                        Welcome to my portfolio! I specialize in modern full-stack development with Laravel, Vue.js, React, and Tailwind CSS. I bridge the gap between elegant design and robust engineering, creating reliable web systems that scale effortlessly.
+                        Ralph Jade A. Omega is an IT specialist with hands-on enterprise infrastructure experience, public speaking credentials, and certified expertise in cyber threat management and artificial intelligence.
                     </p>
 
                     <!-- Quick Metrics / Spec Badges -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                         <div class="bg-slate-900/80 p-2.5 rounded border border-slate-700 text-center">
-                            <span class="block font-monoRetro text-slate-400 text-sm">MAIN STACK</span>
-                            <span class="font-semibold text-amber-400 text-sm">PHP / Laravel</span>
+                            <span class="block font-monoRetro text-slate-400 text-sm">CORE FOCUS</span>
+                            <span class="font-semibold text-amber-400 text-sm">IT Infrastructure</span>
                         </div>
                         <div class="bg-slate-900/80 p-2.5 rounded border border-slate-700 text-center">
-                            <span class="block font-monoRetro text-slate-400 text-sm">FRONTEND</span>
-                            <span class="font-semibold text-cyan-400 text-sm">Vue & Tailwind</span>
+                            <span class="block font-monoRetro text-slate-400 text-sm">CYBERSECURITY</span>
+                            <span class="font-semibold text-cyan-400 text-sm">Cisco Certified</span>
                         </div>
                         <div class="bg-slate-900/80 p-2.5 rounded border border-slate-700 text-center">
-                            <span class="block font-monoRetro text-slate-400 text-sm">DATABASE</span>
-                            <span class="font-semibold text-emerald-400 text-sm">PostgreSQL / MySQL</span>
+                            <span class="block font-monoRetro text-slate-400 text-sm">AI CREDENTIAL</span>
+                            <span class="font-semibold text-emerald-400 text-sm">IBM SkillsBuild</span>
                         </div>
                         <div class="bg-slate-900/80 p-2.5 rounded border border-slate-700 text-center">
-                            <span class="block font-monoRetro text-slate-400 text-sm">LOCATION</span>
-                            <span class="font-semibold text-rose-400 text-sm">Remote / UTC-5</span>
+                            <span class="block font-monoRetro text-slate-400 text-sm">IT STANDARDS</span>
+                            <span class="font-semibold text-purple-400 text-sm">TOPCIT Level 2</span>
                         </div>
                     </div>
 
@@ -209,8 +213,11 @@
                         <a href="#contact" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-2.5 rounded text-sm font-pixel shadow-retro transition">
                             ✉ CONTACT ME
                         </a>
-                        <a href="#projects" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-5 py-2.5 rounded text-sm font-sans border border-slate-600 shadow-retro transition">
-                            🔍 EXPLORE CARDS
+                        <a href="#skills" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-5 py-2.5 rounded text-sm font-sans border border-slate-600 shadow-retro transition">
+                            🔍 SKILLS MATRIX
+                        </a>
+                        <a href="#certifications" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-5 py-2.5 rounded text-sm font-sans border border-slate-600 shadow-retro transition">
+                            📜 CERTIFICATIONS
                         </a>
                     </div>
                 </div>
@@ -218,319 +225,331 @@
             </div>
         </section>
 
-        <!-- SECTION 2: CORE SKILL CARDS DECK -->
-        <section class="space-y-4">
+        <!-- SECTION 2: TECHNICAL SKILLS MATRIX (CORE DOMAIN CARDS) -->
+        <section id="skills" class="space-y-4">
             <div class="flex justify-between items-end border-b-2 border-slate-800 pb-3">
                 <div>
-                    <h3 class="font-pixel text-sm text-amber-400 uppercase tracking-wider">SKILL SET CARDS</h3>
-                    <p class="text-slate-400 text-sm font-sans mt-1">Core competencies and technical proficiency ratings</p>
+                    <h3 class="font-pixel text-sm text-amber-400 uppercase tracking-wider">TECHNICAL SKILLS MATRIX</h3>
+                    <p class="text-slate-400 text-sm font-sans mt-1">Core domains, competency highlights, and supporting credentials</p>
                 </div>
-                <span class="font-monoRetro text-slate-400 text-lg">DECK SIZE: 4 CARDS</span>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-                <!-- Skill Card 1: Backend Architecture -->
-                <div class="bg-slate-800 rounded-lg p-5 border-3 border-amber-500 shadow-retro-amber flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-pixel text-[10px] text-amber-400">CARD 01</span>
-                            <span class="bg-amber-500/20 text-amber-300 text-xs px-2 py-0.5 rounded font-monoRetro">EXPERT</span>
-                        </div>
-                        <h4 class="font-bold text-lg text-white mb-2">Backend & APIs</h4>
-                        <p class="text-xs text-slate-300 mb-4">RESTful APIs, Microservices, Database Design & Query Optimization.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-xs font-monoRetro text-slate-300">
-                            <span>Laravel / PHP</span>
-                            <span class="text-amber-400">█████████░ 95%</span>
-                        </div>
-                        <div class="flex justify-between text-xs font-monoRetro text-slate-300">
-                            <span>SQL & ORM</span>
-                            <span class="text-amber-400">████████░░ 88%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skill Card 2: Frontend Engineering -->
-                <div class="bg-slate-800 rounded-lg p-5 border-3 border-cyan-500 shadow-retro-cyan flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-pixel text-[10px] text-cyan-400">CARD 02</span>
-                            <span class="bg-cyan-500/20 text-cyan-300 text-xs px-2 py-0.5 rounded font-monoRetro">EXPERT</span>
-                        </div>
-                        <h4 class="font-bold text-lg text-white mb-2">Frontend Systems</h4>
-                        <p class="text-xs text-slate-300 mb-4">Responsive UI/UX, Vue.js, React, Tailwind CSS & State Management.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-xs font-monoRetro text-slate-300">
-                            <span>Vue / Inertia</span>
-                            <span class="text-cyan-400">█████████░ 92%</span>
-                        </div>
-                        <div class="flex justify-between text-xs font-monoRetro text-slate-300">
-                            <span>Tailwind / CSS</span>
-                            <span class="text-cyan-400">██████████ 98%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skill Card 3: Cloud & DevOps -->
-                <div class="bg-slate-800 rounded-lg p-5 border-3 border-emerald-500 shadow-retro-emerald flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-pixel text-[10px] text-emerald-400">CARD 03</span>
-                            <span class="bg-emerald-500/20 text-emerald-300 text-xs px-2 py-0.5 rounded font-monoRetro">PROFICIENT</span>
-                        </div>
-                        <h4 class="font-bold text-lg text-white mb-2">DevOps & Cloud</h4>
-                        <p class="text-xs text-slate-300 mb-4">CI/CD pipelines, Docker containerization, AWS & Server Management.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-xs font-monoRetro text-slate-300">
-                            <span>Docker & CI/CD</span>
-                            <span class="text-emerald-400">████████░░ 82%</span>
-                        </div>
-                        <div class="flex justify-between text-xs font-monoRetro text-slate-300">
-                            <span>AWS & Linux</span>
-                            <span class="text-emerald-400">████████░░ 80%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skill Card 4: Architecture & Testing -->
-                <div class="bg-slate-800 rounded-lg p-5 border-3 border-purple-500 shadow-retro-purple flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-pixel text-[10px] text-purple-400">CARD 04</span>
-                            <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-0.5 rounded font-monoRetro">EXPERT</span>
-                        </div>
-                        <h4 class="font-bold text-lg text-white mb-2">Code Quality</h4>
-                        <p class="text-xs text-slate-300 mb-4">Automated testing (Pest/PHPUnit), TDD, and clean architecture patterns.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-xs font-monoRetro text-slate-300">
-                            <span>Pest / PHPUnit</span>
-                            <span class="text-purple-400">█████████░ 90%</span>
-                        </div>
-                        <div class="flex justify-between text-xs font-monoRetro text-slate-300">
-                            <span>Clean Code / OOP</span>
-                            <span class="text-purple-400">█████████░ 95%</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION 3: FEATURED PROJECT CARDS (TRADING CARD DECK) -->
-        <section id="projects" class="space-y-6">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b-2 border-slate-800 pb-3 gap-2">
-                <div>
-                    <h3 class="font-pixel text-sm text-cyan-400 uppercase tracking-wider">FEATURED PROJECT CARDS</h3>
-                    <p class="text-slate-400 text-sm font-sans mt-1">Highlighted work, web applications, and software products</p>
-                </div>
-                <div class="flex items-center space-x-2 text-xs font-monoRetro text-slate-400">
-                    <span class="inline-block w-2 h-2 rounded-full bg-cyan-400"></span>
-                    <span>SELECT A CARD TO INSPECT DETAILS</span>
-                </div>
+                <span class="font-monoRetro text-slate-400 text-lg">DECK SIZE: 4 DOMAINS</span>
             </div>
 
             <!-- Card View Mode -->
-            <div x-show="mode === 'cards'" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div x-show="mode === 'cards'" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-                <!-- Project Trading Card 1 -->
-                <div class="bg-slate-800 rounded-lg border-4 border-amber-500 shadow-retro-amber p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
-                    <!-- Top Ribbon Header -->
+                <!-- Skill Card 1: Cybersecurity -->
+                <div class="bg-slate-800 rounded-lg p-5 border-3 border-amber-500 shadow-retro-amber flex flex-col justify-between">
                     <div>
-                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
-                            <span class="font-pixel text-[10px] text-amber-400">CARD #01 // E-COMMERCE</span>
-                            <span class="bg-amber-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
-                                FEATURED
-                            </span>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-pixel text-[10px] text-amber-400">DOMAIN 01</span>
+                            <span class="bg-amber-500/20 text-amber-300 text-xs px-2 py-0.5 rounded font-monoRetro">CYBERSECURITY</span>
                         </div>
-
-                        <!-- Card Visual / Thumbnail Box -->
-                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
-                            <div class="font-pixel text-3xl text-amber-400 mb-1">🛍️</div>
-                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">Multi-Vendor Storefront</span>
-                        </div>
-
-                        <h4 class="font-bold text-xl text-white mb-2">Commerce Nexus Platform</h4>
-                        <p class="text-slate-300 text-sm mb-4 line-clamp-3">
-                            A high-volume multi-vendor marketplace engine featuring custom payment gateways, real-time inventory management, and automated order processing.
+                        <h4 class="font-bold text-lg text-white mb-2">Cybersecurity</h4>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            Threat identification, attack surface analysis, network safety protocols, and operational protection.
                         </p>
-
-                        <!-- Key Achievements / Highlights -->
-                        <div class="bg-slate-900/90 rounded p-3 mb-4 space-y-1 border border-slate-700">
-                            <div class="text-xs text-amber-300 font-monoRetro flex items-center gap-1.5">
-                                <span>⚡</span> Processed 100,000+ monthly transactions
-                            </div>
-                            <div class="text-xs text-emerald-300 font-monoRetro flex items-center gap-1.5">
-                                <span>🔒</span> Stripe & PayPal integrated security
-                            </div>
-                        </div>
                     </div>
-
-                    <!-- Card Footer & Tech Stack Tags -->
-                    <div class="space-y-3 pt-2 border-t-2 border-slate-700">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-700 font-monoRetro">Laravel 11</span>
-                            <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-700 font-monoRetro">Vue 3</span>
-                            <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-700 font-monoRetro">MySQL</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">
-                                VIEW CASE STUDY &rarr;
-                            </a>
-                            <span class="text-[10px] text-slate-400 font-monoRetro">RELEASE 2024</span>
-                        </div>
+                    <div class="pt-3 border-t border-slate-700">
+                        <span class="block font-monoRetro text-amber-400 text-xs mb-1 uppercase tracking-wider">Supporting Credentials:</span>
+                        <p class="text-xs text-slate-300 font-medium">
+                            Cisco Cyber Threat Management, Cisco Intro to Cybersecurity
+                        </p>
                     </div>
                 </div>
 
-                <!-- Project Trading Card 2 -->
-                <div class="bg-slate-800 rounded-lg border-4 border-cyan-500 shadow-retro-cyan p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
-                    <!-- Top Ribbon Header -->
+                <!-- Skill Card 2: Artificial Intelligence -->
+                <div class="bg-slate-800 rounded-lg p-5 border-3 border-cyan-500 shadow-retro-cyan flex flex-col justify-between">
                     <div>
-                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
-                            <span class="font-pixel text-[10px] text-cyan-400">CARD #02 // WORKFLOW</span>
-                            <span class="bg-cyan-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
-                                POPULAR
-                            </span>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-pixel text-[10px] text-cyan-400">DOMAIN 02</span>
+                            <span class="bg-cyan-500/20 text-cyan-300 text-xs px-2 py-0.5 rounded font-monoRetro">AI & ML</span>
                         </div>
-
-                        <!-- Card Visual / Thumbnail Box -->
-                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
-                            <div class="font-pixel text-3xl text-cyan-400 mb-1">📊</div>
-                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">Real-time Task Manager</span>
-                        </div>
-
-                        <h4 class="font-bold text-xl text-white mb-2">Pulse Board HQ</h4>
-                        <p class="text-slate-300 text-sm mb-4 line-clamp-3">
-                            Collaborative Kanban management dashboard with live WebSocket updates, drag-and-drop organization, and automated progress reports.
+                        <h4 class="font-bold text-lg text-white mb-2">Artificial Intelligence</h4>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            AI principles, machine learning concepts, and practical applications.
                         </p>
-
-                        <!-- Key Achievements / Highlights -->
-                        <div class="bg-slate-900/90 rounded p-3 mb-4 space-y-1 border border-slate-700">
-                            <div class="text-xs text-cyan-300 font-monoRetro flex items-center gap-1.5">
-                                <span>🚀</span> Sub-second live WebSocket synchronization
-                            </div>
-                            <div class="text-xs text-emerald-300 font-monoRetro flex items-center gap-1.5">
-                                <span>📈</span> 45% productivity increase for teams
-                            </div>
-                        </div>
                     </div>
-
-                    <!-- Card Footer & Tech Stack Tags -->
-                    <div class="space-y-3 pt-2 border-t-2 border-slate-700">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-700 font-monoRetro">Laravel</span>
-                            <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-700 font-monoRetro">Inertia.js</span>
-                            <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-700 font-monoRetro">Tailwind</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
-                                VIEW CASE STUDY &rarr;
-                            </a>
-                            <span class="text-[10px] text-slate-400 font-monoRetro">RELEASE 2023</span>
-                        </div>
+                    <div class="pt-3 border-t border-slate-700">
+                        <span class="block font-monoRetro text-cyan-400 text-xs mb-1 uppercase tracking-wider">Supporting Credentials:</span>
+                        <p class="text-xs text-slate-300 font-medium">
+                            IBM SkillsBuild AI Fundamentals
+                        </p>
                     </div>
                 </div>
 
-                <!-- Project Trading Card 3 -->
-                <div class="bg-slate-800 rounded-lg border-4 border-rose-500 shadow-retro-rose p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
-                    <!-- Top Ribbon Header -->
+                <!-- Skill Card 3: IT Competency -->
+                <div class="bg-slate-800 rounded-lg p-5 border-3 border-purple-500 shadow-retro-purple flex flex-col justify-between">
                     <div>
-                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
-                            <span class="font-pixel text-[10px] text-rose-400">CARD #03 // INFRASTRUCTURE</span>
-                            <span class="bg-rose-500 text-white font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
-                                UTILITY
-                            </span>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-pixel text-[10px] text-purple-400">DOMAIN 03</span>
+                            <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-0.5 rounded font-monoRetro">IT ARCHITECTURE</span>
                         </div>
-
-                        <!-- Card Visual / Thumbnail Box -->
-                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
-                            <div class="font-pixel text-3xl text-rose-400 mb-1">🛡️</div>
-                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">API Sentinel Proxy</span>
-                        </div>
-
-                        <h4 class="font-bold text-xl text-white mb-2">Gateway Guard Engine</h4>
-                        <p class="text-slate-300 text-sm mb-4 line-clamp-3">
-                            High-performance microservice API gateway offering rate limiting, token authentication, payload verification, and automated request logging.
+                        <h4 class="font-bold text-lg text-white mb-2">IT Competency</h4>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            Software design, system architecture, database fundamentals, and IT project management.
                         </p>
-
-                        <!-- Key Achievements / Highlights -->
-                        <div class="bg-slate-900/90 rounded p-3 mb-4 space-y-1 border border-slate-700">
-                            <div class="text-xs text-rose-300 font-monoRetro flex items-center gap-1.5">
-                                <span>⚡</span> 99.99% uptime with Redis caching
-                            </div>
-                            <div class="text-xs text-emerald-300 font-monoRetro flex items-center gap-1.5">
-                                <span>🛡️</span> Prevented over 1M malicious requests
-                            </div>
-                        </div>
                     </div>
+                    <div class="pt-3 border-t border-slate-700">
+                        <span class="block font-monoRetro text-purple-400 text-xs mb-1 uppercase tracking-wider">Supporting Credentials:</span>
+                        <p class="text-xs text-slate-300 font-medium">
+                            TOPCIT Level 2 Certification
+                        </p>
+                    </div>
+                </div>
 
-                    <!-- Card Footer & Tech Stack Tags -->
-                    <div class="space-y-3 pt-2 border-t-2 border-slate-700">
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-700 font-monoRetro">PHP 8.3</span>
-                            <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-700 font-monoRetro">Redis</span>
-                            <span class="bg-slate-900 text-slate-300 text-xs px-2 py-0.5 rounded border border-slate-700 font-monoRetro">Docker</span>
+                <!-- Skill Card 4: Systems & Support -->
+                <div class="bg-slate-800 rounded-lg p-5 border-3 border-emerald-500 shadow-retro-emerald flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-pixel text-[10px] text-emerald-400">DOMAIN 04</span>
+                            <span class="bg-emerald-500/20 text-emerald-300 text-xs px-2 py-0.5 rounded font-monoRetro">INFRASTRUCTURE</span>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-xs font-bold text-rose-400 hover:text-rose-300 flex items-center gap-1">
-                                VIEW CASE STUDY &rarr;
-                            </a>
-                            <span class="text-[10px] text-slate-400 font-monoRetro">RELEASE 2024</span>
-                        </div>
+                        <h4 class="font-bold text-lg text-white mb-2">Systems & Support</h4>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            Enterprise OS configuration, hardware installation, desktop troubleshooting, and IT service delivery.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-700">
+                        <span class="block font-monoRetro text-emerald-400 text-xs mb-1 uppercase tracking-wider">Supporting Credentials:</span>
+                        <p class="text-xs text-slate-300 font-medium">
+                            VXI IT Desktop Engineering Trainee
+                        </p>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Compact Grid View Mode -->
+            <!-- Compact List Mode -->
             <div x-show="mode === 'grid'" class="space-y-3">
                 <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div class="flex items-center gap-4">
                         <span class="font-pixel text-xs text-amber-400 bg-slate-900 p-2 rounded border border-slate-700">01</span>
                         <div>
-                            <h4 class="font-bold text-lg text-white">Commerce Nexus Platform</h4>
-                            <p class="text-xs text-slate-300">Multi-vendor storefront engine • Laravel, Vue, Stripe</p>
+                            <h4 class="font-bold text-lg text-white">Cybersecurity</h4>
+                            <p class="text-xs text-slate-300">Threat identification, attack surface analysis, network safety protocols, and operational protection.</p>
                         </div>
                     </div>
-                    <a href="#" class="bg-amber-500 text-slate-950 text-xs font-bold px-4 py-2 rounded font-sans">Inspect Project</a>
+                    <span class="bg-amber-500/20 text-amber-300 text-xs px-3 py-1 rounded font-monoRetro border border-amber-500/40 shrink-0">Cisco Cyber Threat Management & Intro</span>
                 </div>
 
                 <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div class="flex items-center gap-4">
                         <span class="font-pixel text-xs text-cyan-400 bg-slate-900 p-2 rounded border border-slate-700">02</span>
                         <div>
-                            <h4 class="font-bold text-lg text-white">Pulse Board HQ</h4>
-                            <p class="text-xs text-slate-300">Real-time collaborative task manager • Inertia, Vue, WebSockets</p>
+                            <h4 class="font-bold text-lg text-white">Artificial Intelligence</h4>
+                            <p class="text-xs text-slate-300">AI principles, machine learning concepts, and practical applications.</p>
                         </div>
                     </div>
-                    <a href="#" class="bg-cyan-500 text-slate-950 text-xs font-bold px-4 py-2 rounded font-sans">Inspect Project</a>
+                    <span class="bg-cyan-500/20 text-cyan-300 text-xs px-3 py-1 rounded font-monoRetro border border-cyan-500/40 shrink-0">IBM SkillsBuild AI Fundamentals</span>
                 </div>
 
                 <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div class="flex items-center gap-4">
-                        <span class="font-pixel text-xs text-rose-400 bg-slate-900 p-2 rounded border border-slate-700">03</span>
+                        <span class="font-pixel text-xs text-purple-400 bg-slate-900 p-2 rounded border border-slate-700">03</span>
                         <div>
-                            <h4 class="font-bold text-lg text-white">Gateway Guard Engine</h4>
-                            <p class="text-xs text-slate-300">API gateway and rate-limiting proxy • PHP 8, Redis, Docker</p>
+                            <h4 class="font-bold text-lg text-white">IT Competency</h4>
+                            <p class="text-xs text-slate-300">Software design, system architecture, database fundamentals, and IT project management.</p>
                         </div>
                     </div>
-                    <a href="#" class="bg-rose-500 text-white text-xs font-bold px-4 py-2 rounded font-sans">Inspect Project</a>
+                    <span class="bg-purple-500/20 text-purple-300 text-xs px-3 py-1 rounded font-monoRetro border border-purple-500/40 shrink-0">TOPCIT Level 2 Certification</span>
+                </div>
+
+                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="flex items-center gap-4">
+                        <span class="font-pixel text-xs text-emerald-400 bg-slate-900 p-2 rounded border border-slate-700">04</span>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Systems & Support</h4>
+                            <p class="text-xs text-slate-300">Enterprise OS configuration, hardware installation, desktop troubleshooting, and IT service delivery.</p>
+                        </div>
+                    </div>
+                    <span class="bg-emerald-500/20 text-emerald-300 text-xs px-3 py-1 rounded font-monoRetro border border-emerald-500/40 shrink-0">VXI IT Desktop Engineering Trainee</span>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 4: WORK HISTORY CARDS (CAREER TIMELINE) -->
+        <!-- SECTION 3: CERTIFICATIONS & CREDENTIALS DECK -->
+        <section id="certifications" class="space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b-2 border-slate-800 pb-3 gap-2">
+                <div>
+                    <h3 class="font-pixel text-sm text-cyan-400 uppercase tracking-wider">CERTIFICATIONS & CREDENTIALS CARDS</h3>
+                    <p class="text-slate-400 text-sm font-sans mt-1">Verified industry certifications and official qualifications</p>
+                </div>
+                <div class="flex items-center space-x-2 text-xs font-monoRetro text-slate-400">
+                    <span class="inline-block w-2 h-2 rounded-full bg-cyan-400"></span>
+                    <span>VERIFIED CREDENTIAL DECK</span>
+                </div>
+            </div>
+
+            <!-- Card View Mode -->
+            <div x-show="mode === 'cards'" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Certification Card 1 -->
+                <div class="bg-slate-800 rounded-lg border-4 border-amber-500 shadow-retro-amber p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
+                    <div>
+                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
+                            <span class="font-pixel text-[10px] text-amber-400">CARD #01 // SECURITY</span>
+                            <span class="bg-amber-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
+                                MAY 2026
+                            </span>
+                        </div>
+
+                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
+                            <div class="font-pixel text-3xl text-amber-400 mb-1">🛡️</div>
+                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">Cisco Networking Academy</span>
+                        </div>
+
+                        <h4 class="font-bold text-lg text-white mb-2">Cyber Threat Management</h4>
+                        <p class="text-slate-300 text-xs mb-3">
+                            Issued by Cisco Networking Academy / University of Southern Mindanao.
+                        </p>
+                    </div>
+
+                    <div class="pt-3 border-t-2 border-slate-700 flex justify-between items-center">
+                        <span class="text-xs text-amber-400 font-monoRetro font-bold">VERIFIED CERTIFICATION</span>
+                        <span class="text-[10px] text-slate-400 font-monoRetro">MAY 2026</span>
+                    </div>
+                </div>
+
+                <!-- Certification Card 2 -->
+                <div class="bg-slate-800 rounded-lg border-4 border-cyan-500 shadow-retro-cyan p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
+                    <div>
+                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
+                            <span class="font-pixel text-[10px] text-cyan-400">CARD #02 // SECURITY</span>
+                            <span class="bg-cyan-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
+                                MAR 2026
+                            </span>
+                        </div>
+
+                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
+                            <div class="font-pixel text-3xl text-cyan-400 mb-1">🔒</div>
+                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">Cisco Networking Academy</span>
+                        </div>
+
+                        <h4 class="font-bold text-lg text-white mb-2">Introduction to Cybersecurity</h4>
+                        <p class="text-slate-300 text-xs mb-3">
+                            Issued by Cisco Networking Academy. Fundamental principles of cybersecurity and operational threat defense.
+                        </p>
+                    </div>
+
+                    <div class="pt-3 border-t-2 border-slate-700 flex justify-between items-center">
+                        <span class="text-xs text-cyan-400 font-monoRetro font-bold">VERIFIED CERTIFICATION</span>
+                        <span class="text-[10px] text-slate-400 font-monoRetro">MARCH 2026</span>
+                    </div>
+                </div>
+
+                <!-- Certification Card 3 -->
+                <div class="bg-slate-800 rounded-lg border-4 border-emerald-500 shadow-retro-emerald p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
+                    <div>
+                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
+                            <span class="font-pixel text-[10px] text-emerald-400">CARD #03 // AI</span>
+                            <span class="bg-emerald-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
+                                FEB 2026
+                            </span>
+                        </div>
+
+                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
+                            <div class="font-pixel text-3xl text-emerald-400 mb-1">🤖</div>
+                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">IBM SkillsBuild</span>
+                        </div>
+
+                        <h4 class="font-bold text-lg text-white mb-2">Artificial Intelligence Fundamentals</h4>
+                        <p class="text-slate-300 text-xs mb-3">
+                            Issued by IBM SkillsBuild. Comprehensive mastery of foundational AI principles, machine learning concepts, and practical applications.
+                        </p>
+                    </div>
+
+                    <div class="pt-3 border-t-2 border-slate-700 flex justify-between items-center">
+                        <span class="text-xs text-emerald-400 font-monoRetro font-bold">VERIFIED CERTIFICATION</span>
+                        <span class="text-[10px] text-slate-400 font-monoRetro">FEB 2026</span>
+                    </div>
+                </div>
+
+                <!-- Certification Card 4 -->
+                <div class="bg-slate-800 rounded-lg border-4 border-purple-500 shadow-retro-purple p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
+                    <div>
+                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
+                            <span class="font-pixel text-[10px] text-purple-400">CARD #04 // STANDARDS</span>
+                            <span class="bg-purple-500 text-white font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
+                                DEC 2025
+                            </span>
+                        </div>
+
+                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
+                            <div class="font-pixel text-3xl text-purple-400 mb-1">🎓</div>
+                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">IITP Official Credential</span>
+                        </div>
+
+                        <h4 class="font-bold text-lg text-white mb-2">TOPCIT Level 2 Credential</h4>
+                        <p class="text-slate-300 text-xs mb-3">
+                            Issued by Institute for Information & Communications Technology Promotion. Standardized assessment of IT competency and software design.
+                        </p>
+                    </div>
+
+                    <div class="pt-3 border-t-2 border-slate-700 flex justify-between items-center">
+                        <span class="text-xs text-purple-400 font-monoRetro font-bold">VERIFIED CREDENTIAL</span>
+                        <span class="text-[10px] text-slate-400 font-monoRetro">DEC 2025</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Compact List View Mode -->
+            <div x-show="mode === 'grid'" class="space-y-3">
+                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="flex items-center gap-4">
+                        <span class="font-pixel text-xs text-amber-400 bg-slate-900 p-2 rounded border border-slate-700">01</span>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Cyber Threat Management</h4>
+                            <p class="text-xs text-slate-300">Cisco Networking Academy / University of Southern Mindanao</p>
+                        </div>
+                    </div>
+                    <span class="text-amber-400 font-monoRetro text-sm">MAY 2026</span>
+                </div>
+
+                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="flex items-center gap-4">
+                        <span class="font-pixel text-xs text-cyan-400 bg-slate-900 p-2 rounded border border-slate-700">02</span>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Introduction to Cybersecurity</h4>
+                            <p class="text-xs text-slate-300">Cisco Networking Academy</p>
+                        </div>
+                    </div>
+                    <span class="text-cyan-400 font-monoRetro text-sm">MARCH 2026</span>
+                </div>
+
+                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="flex items-center gap-4">
+                        <span class="font-pixel text-xs text-emerald-400 bg-slate-900 p-2 rounded border border-slate-700">03</span>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Artificial Intelligence Fundamentals</h4>
+                            <p class="text-xs text-slate-300">IBM SkillsBuild</p>
+                        </div>
+                    </div>
+                    <span class="text-emerald-400 font-monoRetro text-sm">FEBRUARY 2026</span>
+                </div>
+
+                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="flex items-center gap-4">
+                        <span class="font-pixel text-xs text-purple-400 bg-slate-900 p-2 rounded border border-slate-700">04</span>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">TOPCIT Level 2 Credential</h4>
+                            <p class="text-xs text-slate-300">Institute for Information & Communications Technology Promotion</p>
+                        </div>
+                    </div>
+                    <span class="text-purple-400 font-monoRetro text-sm">DECEMBER 2025</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PRACTICAL EXPERIENCE & LEADERSHIP CARDS -->
         <section class="space-y-4">
             <div class="flex justify-between items-end border-b-2 border-slate-800 pb-3">
                 <div>
-                    <h3 class="font-pixel text-sm text-emerald-400 uppercase tracking-wider">WORK HISTORY CARDS</h3>
-                    <p class="text-slate-400 text-sm font-sans mt-1">Professional timeline and software engineering roles</p>
+                    <h3 class="font-pixel text-sm text-emerald-400 uppercase tracking-wider">PRACTICAL EXPERIENCE & LEADERSHIP</h3>
+                    <p class="text-slate-400 text-sm font-sans mt-1">Enterprise technical experience and leadership credentials</p>
                 </div>
-                <span class="font-monoRetro text-slate-400 text-lg">RECORD FILE: #EXP-2024</span>
+                <span class="font-monoRetro text-slate-400 text-lg">RECORD FILE: #EXP-2026</span>
             </div>
 
             <div class="space-y-4">
@@ -539,31 +558,30 @@
                 <div class="bg-slate-800 rounded-lg border-2 border-slate-700 p-6 shadow-retro relative">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3 border-b border-slate-700 pb-3">
                         <div>
-                            <span class="text-xs font-monoRetro text-emerald-400 uppercase tracking-widest">[CURRENT ROLE] • 2022 - PRESENT</span>
-                            <h4 class="font-bold text-xl text-white">Senior Software Engineer @ TechSphere Solutions</h4>
+                            <span class="text-xs font-monoRetro text-emerald-400 uppercase tracking-widest">[PRACTICAL EXPERIENCE] • MAY – JULY 2026</span>
+                            <h4 class="font-bold text-xl text-white">IT Desktop Engineer Trainee @ VXI Global Holdings B.V.</h4>
                         </div>
-                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs px-3 py-1 rounded font-monoRetro">FULL-TIME</span>
+                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs px-3 py-1 rounded font-monoRetro">260 HOURS</span>
                     </div>
                     <ul class="text-slate-300 text-sm space-y-2 list-disc list-inside">
-                        <li>Architected scalable RESTful services in Laravel serving over 500k active monthly users.</li>
-                        <li>Reduced database query response times by 40% through index optimization and Redis caching strategy.</li>
-                        <li>Mentored a team of 5 junior and mid-level developers in modern PHP, unit testing, and Git workflows.</li>
+                        <li>Completed 260 hours of technical support, diagnosing hardware/software issues, and maintaining desktop infrastructure in an enterprise call center environment.</li>
+                        <li>Provided rapid technical troubleshooting and service delivery to maintain maximum operational uptime for enterprise staff.</li>
+                        <li>Managed enterprise operating system configurations, software deployments, and desktop network setup.</li>
                     </ul>
                 </div>
 
-                <!-- Experience Card 2 -->
+                <!-- Leadership & Public Speaking Card -->
                 <div class="bg-slate-800 rounded-lg border-2 border-slate-700 p-6 shadow-retro relative">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3 border-b border-slate-700 pb-3">
                         <div>
-                            <span class="text-xs font-monoRetro text-slate-400 uppercase tracking-widest">[PREVIOUS ROLE] • 2019 - 2022</span>
-                            <h4 class="font-bold text-xl text-white">Full-Stack Developer @ Apex Digital Agency</h4>
+                            <span class="text-xs font-monoRetro text-amber-400 uppercase tracking-widest">[LEADERSHIP & ADVOCACY] • ONGOING</span>
+                            <h4 class="font-bold text-xl text-white">Public Speaking & Technical Advocacy</h4>
                         </div>
-                        <span class="bg-slate-700 text-slate-300 text-xs px-3 py-1 rounded font-monoRetro">FULL-TIME</span>
+                        <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs px-3 py-1 rounded font-monoRetro">SPEAKER CREDENTIALS</span>
                     </div>
                     <ul class="text-slate-300 text-sm space-y-2 list-disc list-inside">
-                        <li>Delivered 15+ custom client web applications using Laravel, Vue.js, and Tailwind CSS.</li>
-                        <li>Integrated third-party APIs including Stripe, Salesforce, Twilio, and SendGrid.</li>
-                        <li>Automated deployment pipelines with GitHub Actions and Docker containers.</li>
+                        <li>Demonstrated public speaking credentials, delivering presentations and technical advocacy on emerging technologies and cybersecurity best practices.</li>
+                        <li>Fostered knowledge sharing across IT teams, translating complex cyber threat and AI topics into actionable, accessible insights.</li>
                     </ul>
                 </div>
 
@@ -573,28 +591,25 @@
         <!-- SECTION 5: CONTACT CARD & FOOTER -->
         <section id="contact" class="bg-gradient-to-r from-slate-800 to-slate-900 border-4 border-amber-500 rounded-lg p-8 shadow-retro-amber text-center space-y-5">
             <div class="inline-block bg-amber-500/20 text-amber-300 font-pixel text-xs px-3 py-1 rounded border border-amber-500/40">
-                CARD #99 // CONTACT & RECRUITMENT
+                CARD #99 // CONTACT & ENGAGEMENT
             </div>
 
             <h3 class="font-pixel text-xl sm:text-2xl text-white tracking-wide">
-                LET'S WORK TOGETHER
+                LET'S CONNECT
             </h3>
 
             <p class="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
-                Interested in building something together or looking for a skilled developer for your team? Feel free to send an inquiry or connect directly!
+                Interested in collaborating or discussing enterprise infrastructure, cybersecurity, or AI implementations? Reach out today!
             </p>
 
             <div class="flex flex-wrap justify-center gap-4 pt-2">
-                <a href="mailto:alex.rivers@example.com" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-pixel text-xs px-6 py-3.5 rounded shadow-retro transition">
-                    ✉ SEND EMAIL
-                </a>
-                <a href="#" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm px-6 py-3 rounded border border-slate-600 shadow-retro transition flex items-center gap-2">
-                    📄 DOWNLOAD RESUME (PDF)
+                <a href="mailto:ralph.omega@example.com" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-pixel text-xs px-6 py-3.5 rounded shadow-retro transition">
+                    ✉ GET IN TOUCH
                 </a>
             </div>
 
             <div class="pt-6 border-t border-slate-800 text-slate-500 text-xs flex justify-between items-center max-w-2xl mx-auto font-monoRetro">
-                <span>ALEX RIVERS PORTFOLIO © 2025</span>
+                <span>RALPH JADE A. OMEGA PORTFOLIO © 2026</span>
                 <span>DESIGNED WITH RETRO CARD SYSTEM</span>
             </div>
         </section>
