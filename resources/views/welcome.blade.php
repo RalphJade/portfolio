@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ mode: 'cards', theme: 'dark' }" :class="theme">
+<html lang="en" x-data="{ theme: 'corporate', activeTab: 'all', themeMenuOpen: false }">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ralph Jade A. Omega | IT Specialist Portfolio</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts for Corporate, Retro, and System Themes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Press+Start+2P&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Alpine.js -->
+    <!-- Alpine.js CDN -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script>
@@ -21,117 +21,183 @@
             theme: {
                 extend: {
                     fontFamily: {
+                        corporate: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
                         pixel: ['"Press Start 2P"', 'monospace'],
                         monoRetro: ['"VT323"', 'monospace'],
-                        sans: ['"Space Grotesk"', 'sans-serif'],
+                        retroSans: ['"Space Grotesk"', 'sans-serif'],
+                        orbitron: ['"Orbitron"', 'sans-serif'],
+                        rajdhani: ['"Rajdhani"', 'sans-serif'],
+                        systemMono: ['"Share Tech Mono"', 'monospace'],
                     },
                     colors: {
+                        corporate: {
+                            bg: '#f8fafc',
+                            card: '#ffffff',
+                            accent: '#0f172a',
+                            primary: '#2563eb',
+                            text: '#334155'
+                        },
                         retro: {
                             bg: '#0f172a',
                             card: '#1e293b',
-                            cardLight: '#ffffff',
                             amber: '#f59e0b',
                             cyan: '#06b6d4',
                             emerald: '#10b981',
-                            rose: '#f43f5e',
-                            purple: '#8b5cf6',
-                            cream: '#fef3c7',
-                            paper: '#f8fafc',
+                            purple: '#8b5cf6'
+                        },
+                        system: {
+                            bg: '#040711',
+                            panel: 'rgba(8, 15, 30, 0.9)',
+                            cyan: '#00f0ff',
+                            purple: '#8a2be2',
+                            gold: '#ffd700'
                         }
                     },
                     boxShadow: {
-                        'retro-sm': '3px 3px 0px 0px rgba(0,0,0,0.85)',
-                        'retro': '5px 5px 0px 0px rgba(0,0,0,0.85)',
-                        'retro-lg': '8px 8px 0px 0px rgba(0,0,0,0.85)',
                         'retro-amber': '5px 5px 0px 0px #f59e0b',
                         'retro-cyan': '5px 5px 0px 0px #06b6d4',
                         'retro-emerald': '5px 5px 0px 0px #10b981',
-                        'retro-rose': '5px 5px 0px 0px #f43f5e',
                         'retro-purple': '5px 5px 0px 0px #8b5cf6',
+                        'system-glow': '0 0 15px rgba(0, 240, 255, 0.35)',
+                        'system-glow-lg': '0 0 25px rgba(0, 240, 255, 0.5)'
                     }
                 }
             }
         }
     </script>
+
     <style>
-        /* Subtle retro CRT scanline effect */
+        /* System Brackets Effect */
+        .system-box {
+            position: relative;
+        }
+        .theme-system .system-box::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px;
+            width: 10px; height: 10px;
+            border-top: 2px solid #00f0ff;
+            border-left: 2px solid #00f0ff;
+        }
+        .theme-system .system-box::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; right: -2px;
+            width: 10px; height: 10px;
+            border-bottom: 2px solid #00f0ff;
+            border-right: 2px solid #00f0ff;
+        }
+
+        /* Scanlines Overlay for Retro/System */
         .scanlines {
             background: linear-gradient(
-                rgba(18, 16, 16, 0) 50%,
-                rgba(0, 0, 0, 0.15) 50%
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0, 240, 255, 0.03) 50%,
+                rgba(0, 240, 255, 0.03)
             );
             background-size: 100% 4px;
         }
-
-        /* Tactile retro card bevels & borders */
-        .retro-card {
-            border: 3px solid #0f172a;
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
-        }
-        .dark .retro-card {
-            border: 3px solid #38bdf8;
-        }
-
-        .retro-card-amber { border-color: #f59e0b !important; }
-        .retro-card-cyan { border-color: #06b6d4 !important; }
-        .retro-card-emerald { border-color: #10b981 !important; }
-        .retro-card-rose { border-color: #f43f5e !important; }
-        .retro-card-purple { border-color: #8b5cf6 !important; }
-
-        .retro-card:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #f59e0b;
-            border: 2px solid #0f172a;
-        }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans min-h-screen antialiased selection:bg-amber-400 selection:text-slate-900 pb-12">
+<body :class="{
+        'theme-corporate bg-slate-50 text-slate-800 font-corporate': theme === 'corporate',
+        'theme-retro bg-slate-900 text-slate-100 font-retroSans scanlines': theme === 'retro',
+        'theme-system bg-system-bg text-cyan-100 font-rajdhani scanlines': theme === 'system'
+      }"
+      class="min-h-screen transition-colors duration-300 antialiased pb-16">
 
-    <!-- Top Navigation Deck Bar -->
-    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b-4 border-slate-800 px-4 md:px-8 py-3">
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
+    <!-- TOP NAVIGATION & THEME SWITCHER BAR -->
+    <header :class="{
+        'bg-white/90 border-b border-slate-200 backdrop-blur-md': theme === 'corporate',
+        'bg-slate-900/95 border-b-4 border-slate-800': theme === 'retro',
+        'bg-system-bg/90 border-b border-cyan-500/40': theme === 'system'
+    }" class="sticky top-0 z-50 px-4 md:px-8 py-3.5 transition-all">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
 
-            <!-- Logo / Badge -->
+            <!-- Dynamic Logo / Title -->
             <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 bg-amber-500 text-slate-950 font-pixel text-xs font-bold flex items-center justify-center border-2 border-amber-300 shadow-retro-sm">
-                    IT
-                </div>
-                <div>
-                    <h1 class="font-pixel text-xs text-amber-400 tracking-wider">RALPH JADE A. OMEGA</h1>
-                    <p class="font-monoRetro text-sm text-slate-400 tracking-widest uppercase">IT Specialist & Security Strategist</p>
-                </div>
+                <template x-if="theme === 'corporate'">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 bg-slate-900 text-white rounded-lg flex items-center justify-center font-bold text-sm tracking-wider">
+                            RO
+                        </div>
+                        <div>
+                            <h1 class="font-bold text-base text-slate-900 leading-tight">Ralph Jade A. Omega</h1>
+                            <p class="text-xs text-slate-500 font-medium">IT Specialist & Security Strategist[cite: 1, 3]</p>
+                        </div>
+                    </div>
+                </template>
+
+                <template x-if="theme === 'retro'">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-amber-500 text-slate-950 font-pixel text-xs font-bold flex items-center justify-center border-2 border-amber-300 shadow-retro-amber">
+                            IT
+                        </div>
+                        <div>
+                            <h1 class="font-pixel text-xs text-amber-400 tracking-wider">RALPH JADE A. OMEGA[cite: 1, 2, 3]</h1>
+                            <p class="font-monoRetro text-sm text-slate-400 tracking-widest uppercase">IT Specialist & Security Strategist[cite: 1, 3]</p>
+                        </div>
+                    </div>
+                </template>
+
+                <template x-if="theme === 'system'">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-3 h-3 bg-cyan-400 rounded-full animate-ping"></div>
+                        <div>
+                            <span class="font-orbitron font-bold text-[10px] text-cyan-400 tracking-widest block">[ SYSTEM NOTIFICATION ]</span>
+                            <h1 class="font-orbitron font-extrabold text-xs text-white tracking-wider">PLAYER STATUS: ACTIVE</h1>
+                        </div>
+                    </div>
+                </template>
             </div>
 
-            <!-- View & Deck Controls -->
+            <!-- Header Controls & Theme Picker -->
             <div class="flex items-center space-x-3">
-                <!-- Status Badge -->
-                <div class="hidden sm:flex items-center space-x-2 bg-slate-800 px-3 py-1 rounded border-2 border-slate-700">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span class="font-monoRetro text-emerald-400 text-base">AVAILABLE FOR OPPORTUNITIES</span>
+                <!-- Status Tag -->
+                <div :class="{
+                    'bg-slate-100 text-slate-700 border-slate-200': theme === 'corporate',
+                    'bg-slate-800 text-emerald-400 border-slate-700 font-monoRetro': theme === 'retro',
+                    'bg-cyan-950/60 text-cyan-300 border-cyan-500/50 font-systemMono': theme === 'system'
+                }" class="hidden sm:flex items-center space-x-2 px-3 py-1 rounded-md border text-xs font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>AVAILABLE FOR OPPORTUNITIES</span>
                 </div>
 
-                <!-- Theme / Layout Switcher -->
-                <div class="flex items-center bg-slate-800 p-1 rounded border-2 border-slate-700">
-                    <button @click="mode = 'cards'"
-                            :class="mode === 'cards' ? 'bg-amber-500 text-slate-950 font-bold shadow-retro-sm' : 'text-slate-400 hover:text-white'"
-                            class="px-3 py-1 text-xs font-monoRetro text-base transition rounded">
-                        🃏 Card Deck
+                <!-- THEME PICKER BUTTON DROPDOWN -->
+                <div class="relative" x-data="{ themeMenuOpen: false }" @click.away="themeMenuOpen = false">
+                    <button @click="themeMenuOpen = !themeMenuOpen"
+                            class="flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold border transition bg-slate-900 text-white hover:bg-slate-800 border-slate-900">
+                        <span>🎨 Theme:</span>
+                        <span class="capitalize">Minimalist Corporate</span>
+                        <span class="text-[10px]">▼</span>
                     </button>
-                    <button @click="mode = 'grid'"
-                            :class="mode === 'grid' ? 'bg-cyan-500 text-slate-950 font-bold shadow-retro-sm' : 'text-slate-400 hover:text-white'"
-                            class="px-3 py-1 text-xs font-monoRetro text-base transition rounded">
-                        📋 Compact List
-                    </button>
+
+                    <!-- Theme Selector Navigation Menu -->
+                    <div x-show="themeMenuOpen"
+                        x-transition
+                        class="absolute right-0 mt-2 w-56 rounded-lg border p-1.5 z-50 text-xs font-medium space-y-1 bg-white text-slate-800 border-slate-200 shadow-xl">
+
+                        <!-- Default/Corporate View -->
+                        <a href="{{ url('/') }}"
+                        class="w-full text-left px-3 py-2 rounded-md flex items-center justify-between transition bg-slate-100 font-bold text-slate-900">
+                            <span>🏢 Minimalist Corporate</span>
+                            <span class="text-blue-600">✓</span>
+                        </a>
+
+                        <!-- Retro Theme View -->
+                        <a href="{{ url('/retro') }}"
+                        class="w-full text-left px-3 py-2 rounded-md flex items-center justify-between transition hover:bg-slate-100 text-slate-700 font-retroSans">
+                            <span>🃏 Retro Card Deck</span>
+                        </a>
+
+                        <!-- Solo Leveling Theme View -->
+                        <a href="{{ url('/sololeveling') }}"
+                        class="w-full text-left px-3 py-2 rounded-md flex items-center justify-between transition hover:bg-slate-100 text-slate-700 font-orbitron">
+                            <span>⚡ Solo Leveling HUD</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -140,84 +206,152 @@
 
     <main class="max-w-6xl mx-auto px-4 md:px-6 pt-8 space-y-10">
 
-        <!-- SECTION 1: DEVELOPER ID CARD (HERO) -->
-        <section class="bg-slate-800 border-4 border-amber-500 rounded-lg p-6 md:p-8 shadow-retro-amber relative overflow-hidden">
-            <!-- Retro Card Watermark -->
-            <div class="absolute -right-6 -bottom-6 opacity-10 font-pixel text-8xl text-amber-400 select-none pointer-events-none">
-                #001
-            </div>
+        <!-- SECTION 1: HERO / EXECUTIVE PROFILE -->
+        <section :class="{
+            'bg-white border border-slate-200/80 rounded-2xl p-8 shadow-sm': theme === 'corporate',
+            'bg-slate-800 border-4 border-amber-500 rounded-lg p-6 md:p-8 shadow-retro-amber relative overflow-hidden': theme === 'retro',
+            'bg-system-panel border-2 border-cyan-400/70 p-6 md:p-8 system-box shadow-system-glow-lg relative overflow-hidden': theme === 'system'
+        }" class="transition-all duration-300">
 
-            <div class="flex flex-col md:flex-row gap-6 items-center md:items-start relative z-10">
+            <div class="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
 
-                <!-- Avatar Card Photo -->
+                <!-- Avatar Block -->
                 <div class="flex flex-col items-center shrink-0">
-                    <div class="w-36 h-36 md:w-44 md:h-44 bg-slate-900 border-4 border-slate-700 rounded p-2 shadow-retro relative group flex items-center justify-center">
-                        <div class="w-full h-full bg-slate-950 rounded flex flex-col items-center justify-center text-center p-3 border border-slate-800">
-                            <span class="font-pixel text-3xl text-amber-400 mb-2">🛡️</span>
-                            <span class="font-pixel text-[10px] text-slate-300">RALPH OMEGA</span>
+                    <div :class="{
+                        'w-36 h-36 md:w-40 md:h-40 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-bold text-3xl shadow-md border-4 border-white': theme === 'corporate',
+                        'w-36 h-36 md:w-44 md:h-44 bg-slate-900 border-4 border-slate-700 rounded p-2 shadow-retro flex items-center justify-center relative': theme === 'retro',
+                        'w-40 h-40 md:w-44 md:h-44 bg-slate-950 border-2 border-cyan-400 p-2 system-box shadow-system-glow flex items-center justify-center relative': theme === 'system'
+                    }">
+                        <div class="text-center">
+                            <span :class="{
+                                'text-4xl': theme === 'corporate',
+                                'font-pixel text-3xl text-amber-400 block mb-1': theme === 'retro',
+                                'font-orbitron text-4xl text-cyan-400 block mb-1 drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]': theme === 'system'
+                            }">🛡️</span>
+                            <span :class="{
+                                'text-xs text-slate-300 font-medium block mt-1': theme === 'corporate',
+                                'font-pixel text-[10px] text-slate-300 block': theme === 'retro',
+                                'font-orbitron text-[10px] text-white tracking-widest block mt-2': theme === 'system'
+                            }">RALPH OMEGA</span>
                         </div>
-                        <span class="absolute -top-3 -right-3 bg-emerald-500 text-slate-950 font-pixel text-[10px] px-2 py-1 rounded border-2 border-white shadow-retro-sm font-bold">
-                            CERTIFIED
-                        </span>
+
+                        <!-- System / Retro Badges -->
+                        <template x-if="theme === 'retro'">
+                            <span class="absolute -top-3 -right-3 bg-emerald-500 text-slate-950 font-pixel text-[10px] px-2 py-1 rounded border-2 border-white shadow-retro-amber font-bold">
+                                CERTIFIED
+                            </span>
+                        </template>
+                        <template x-if="theme === 'system'">
+                            <span class="absolute -top-3 -right-3 bg-amber-400 text-slate-950 font-orbitron font-extrabold text-[9px] px-2 py-0.5 shadow-sm uppercase tracking-widest">
+                                S-RANK HUNTER[cite: 11]
+                            </span>
+                        </template>
                     </div>
-                    <span class="mt-3 font-monoRetro text-amber-400 text-lg tracking-wider">ID: RO-2026-IT</span>
+
+                    <span :class="{
+                        'text-xs text-slate-500 mt-3 font-mono': theme === 'corporate',
+                        'mt-3 font-monoRetro text-amber-400 text-lg tracking-wider': theme === 'retro',
+                        'mt-3 font-systemMono text-cyan-400 text-xs tracking-widest': theme === 'system'
+                    }">ID: RO-2026-IT[cite: 6, 11]</span>
                 </div>
 
-                <!-- Bio & Professional Summary -->
+                <!-- Bio & Title Content -->
                 <div class="flex-1 text-center md:text-left space-y-4">
                     <div>
-                        <div class="flex flex-wrap justify-center md:justify-start items-center gap-2 mb-2">
-                            <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2.5 py-0.5 rounded text-xs font-monoRetro text-base font-semibold">
-                                ★ IT SPECIALIST
+                        <!-- Theme-specific tags -->
+                        <div class="flex flex-wrap justify-center md:justify-start items-center gap-2 mb-2 font-mono text-xs">
+                            <span :class="{
+                                'bg-blue-50 text-blue-700 border-blue-200 font-sans font-semibold': theme === 'corporate',
+                                'bg-amber-500/20 text-amber-300 border-amber-500/40 font-monoRetro text-sm': theme === 'retro',
+                                'bg-cyan-500/20 text-cyan-300 border-cyan-400/50 uppercase tracking-wider font-systemMono': theme === 'system'
+                            }" class="px-2.5 py-0.5 rounded border">
+                                ★ IT SPECIALIST[cite: 1, 3]
                             </span>
-                            <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-2.5 py-0.5 rounded text-xs font-monoRetro text-base font-semibold">
-                                PUBLIC SPEAKER
-                            </span>
-                            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded text-xs font-monoRetro text-base font-semibold">
-                                ENTERPRISE INFRASTRUCTURE
+                            <span :class="{
+                                'bg-slate-100 text-slate-700 border-slate-200 font-sans font-semibold': theme === 'corporate',
+                                'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 font-monoRetro text-sm': theme === 'retro',
+                                'bg-purple-500/20 text-purple-300 border-purple-400/50 uppercase tracking-wider font-systemMono': theme === 'system'
+                            }" class="px-2.5 py-0.5 rounded border">
+                                ENTERPRISE INFRASTRUCTURE[cite: 6]
                             </span>
                         </div>
-                        <h2 class="font-pixel text-xl md:text-2xl text-white tracking-tight">
-                            RALPH JADE A. OMEGA
+
+                        <h2 :class="{
+                            'text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight': theme === 'corporate',
+                            'font-pixel text-xl md:text-2xl text-white tracking-tight': theme === 'retro',
+                            'font-orbitron font-black text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-cyan-400': theme === 'system'
+                        }">
+                            RALPH JADE A. OMEGA[cite: 1, 2, 3, 4, 5, 6]
                         </h2>
-                        <p class="font-monoRetro text-xl text-cyan-400 tracking-wide mt-1">
-                            Enterprise Infrastructure • Cyber Threat Management • Artificial Intelligence
+
+                        <p :class="{
+                            'text-slate-600 font-medium text-base mt-1': theme === 'corporate',
+                            'font-monoRetro text-xl text-cyan-400 tracking-wide mt-1': theme === 'retro',
+                            'font-systemMono text-cyan-400 text-sm tracking-wider mt-1': theme === 'system'
+                        }">
+                            Enterprise Infrastructure • Cyber Threat Management • Artificial Intelligence[cite: 1, 3, 4, 6]
                         </p>
                     </div>
 
-                    <p class="text-slate-300 text-base leading-relaxed max-w-3xl">
-                        Ralph Jade A. Omega is an IT specialist with hands-on enterprise infrastructure experience, public speaking credentials, and certified expertise in cyber threat management and artificial intelligence.
+                    <p :class="{
+                        'text-slate-600 leading-relaxed text-sm md:text-base max-w-3xl': theme === 'corporate',
+                        'text-slate-300 text-base leading-relaxed max-w-3xl': theme === 'retro',
+                        'text-slate-300 text-base leading-relaxed max-w-3xl font-sans': theme === 'system'
+                    }">
+                        Ralph Jade A. Omega is an IT specialist with hands-on enterprise infrastructure experience and certified expertise in cyber threat management and artificial intelligence[cite: 1, 3, 4, 6]. Combines practical infrastructure experience at VXI Global Holdings with proven technical advocacy as a featured speaker.
                     </p>
 
-                    <!-- Quick Metrics / Spec Badges -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                        <div class="bg-slate-900/80 p-2.5 rounded border border-slate-700 text-center">
-                            <span class="block font-monoRetro text-slate-400 text-sm">CORE FOCUS</span>
-                            <span class="font-semibold text-amber-400 text-sm">IT Infrastructure</span>
+                    <!-- Quick Metrics Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs">
+                        <div :class="{
+                            'bg-slate-50 border-slate-200 p-3 rounded-lg text-slate-700': theme === 'corporate',
+                            'bg-slate-900 p-2.5 rounded border border-slate-700 text-center': theme === 'retro',
+                            'bg-slate-950 p-3 border border-cyan-500/30 text-center font-systemMono': theme === 'system'
+                        }">
+                            <span class="block text-slate-400 text-[10px] uppercase font-mono">CORE FOCUS</span>
+                            <span class="font-bold text-slate-900 dark:text-amber-400">IT Infrastructure[cite: 6]</span>
                         </div>
-                        <div class="bg-slate-900/80 p-2.5 rounded border border-slate-700 text-center">
-                            <span class="block font-monoRetro text-slate-400 text-sm">CYBERSECURITY</span>
-                            <span class="font-semibold text-cyan-400 text-sm">Cisco Certified</span>
+                        <div :class="{
+                            'bg-slate-50 border-slate-200 p-3 rounded-lg text-slate-700': theme === 'corporate',
+                            'bg-slate-900 p-2.5 rounded border border-slate-700 text-center': theme === 'retro',
+                            'bg-slate-950 p-3 border border-cyan-500/30 text-center font-systemMono': theme === 'system'
+                        }">
+                            <span class="block text-slate-400 text-[10px] uppercase font-mono">CYBERSECURITY</span>
+                            <span class="font-bold text-slate-900 dark:text-cyan-400">Cisco Certified[cite: 1, 3]</span>
                         </div>
-                        <div class="bg-slate-900/80 p-2.5 rounded border border-slate-700 text-center">
-                            <span class="block font-monoRetro text-slate-400 text-sm">AI CREDENTIAL</span>
-                            <span class="font-semibold text-emerald-400 text-sm">IBM SkillsBuild</span>
+                        <div :class="{
+                            'bg-slate-50 border-slate-200 p-3 rounded-lg text-slate-700': theme === 'corporate',
+                            'bg-slate-900 p-2.5 rounded border border-slate-700 text-center': theme === 'retro',
+                            'bg-slate-950 p-3 border border-cyan-500/30 text-center font-systemMono': theme === 'system'
+                        }">
+                            <span class="block text-slate-400 text-[10px] uppercase font-mono">AI CREDENTIAL</span>
+                            <span class="font-bold text-slate-900 dark:text-emerald-400">IBM SkillsBuild[cite: 4]</span>
                         </div>
-                        <div class="bg-slate-900/80 p-2.5 rounded border border-slate-700 text-center">
-                            <span class="block font-monoRetro text-slate-400 text-sm">IT STANDARDS</span>
-                            <span class="font-semibold text-purple-400 text-sm">TOPCIT Level 2</span>
+                        <div :class="{
+                            'bg-slate-50 border-slate-200 p-3 rounded-lg text-slate-700': theme === 'corporate',
+                            'bg-slate-900 p-2.5 rounded border border-slate-700 text-center': theme === 'retro',
+                            'bg-slate-950 p-3 border border-cyan-500/30 text-center font-systemMono': theme === 'system'
+                        }">
+                            <span class="block text-slate-400 text-[10px] uppercase font-mono">IT STANDARDS</span>
+                            <span class="font-bold text-slate-900 dark:text-purple-400">TOPCIT Level 2[cite: 2]</span>
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
-                        <a href="#contact" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-2.5 rounded text-sm font-pixel shadow-retro transition">
-                            ✉ CONTACT ME
+                    <!-- CTA Actions -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3 pt-3">
+                        <a href="#contact" :class="{
+                            'bg-slate-900 hover:bg-slate-800 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition shadow-sm': theme === 'corporate',
+                            'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-2.5 rounded text-sm font-pixel shadow-retro transition': theme === 'retro',
+                            'bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-orbitron font-bold px-6 py-3 border border-cyan-300 shadow-system-glow transition': theme === 'system'
+                        }">
+                            ✉ Contact Me
                         </a>
-                        <a href="#skills" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-5 py-2.5 rounded text-sm font-sans border border-slate-600 shadow-retro transition">
-                            🔍 SKILLS MATRIX
-                        </a>
-                        <a href="#certifications" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-5 py-2.5 rounded text-sm font-sans border border-slate-600 shadow-retro transition">
-                            📜 CERTIFICATIONS
+                        <a href="#skills" :class="{
+                            'bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold px-5 py-2.5 rounded-lg text-sm transition border border-slate-200': theme === 'corporate',
+                            'bg-slate-700 hover:bg-slate-600 text-white font-semibold px-5 py-2.5 rounded text-sm border border-slate-600 shadow-retro transition': theme === 'retro',
+                            'bg-slate-900 hover:bg-slate-800 text-cyan-400 font-bold px-6 py-3 border border-cyan-500/50 transition font-systemMono': theme === 'system'
+                        }">
+                            🔍 Technical Matrix
                         </a>
                     </div>
                 </div>
@@ -225,392 +359,306 @@
             </div>
         </section>
 
-        <!-- SECTION 2: TECHNICAL SKILLS MATRIX (CORE DOMAIN CARDS) -->
-        <section id="skills" class="space-y-4">
-            <div class="flex justify-between items-end border-b-2 border-slate-800 pb-3">
+        <!-- SECTION 2: TECHNICAL SKILLS MATRIX -->
+        <section id="skills" class="space-y-5">
+            <div :class="{
+                'border-b border-slate-200 pb-3 flex justify-between items-end': theme === 'corporate',
+                'border-b-2 border-slate-800 pb-3 flex justify-between items-end': theme === 'retro',
+                'border-b border-cyan-500/40 pb-3 flex justify-between items-end': theme === 'system'
+            }">
                 <div>
-                    <h3 class="font-pixel text-sm text-amber-400 uppercase tracking-wider">TECHNICAL SKILLS MATRIX</h3>
-                    <p class="text-slate-400 text-sm font-sans mt-1">Core domains, competency highlights, and supporting credentials</p>
+                    <h3 :class="{
+                        'text-xl font-bold text-slate-900': theme === 'corporate',
+                        'font-pixel text-sm text-amber-400 uppercase tracking-wider': theme === 'retro',
+                        'font-orbitron font-bold text-lg text-cyan-400 tracking-wider': theme === 'system'
+                    }">TECHNICAL SKILLS MATRIX</h3>
+                    <p class="text-slate-500 text-xs md:text-sm mt-0.5">Core domains, competency highlights, and supporting credentials</p>
                 </div>
-                <span class="font-monoRetro text-slate-400 text-lg">DECK SIZE: 4 DOMAINS</span>
             </div>
 
-            <!-- Card View Mode -->
-            <div x-show="mode === 'cards'" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-                <!-- Skill Card 1: Cybersecurity -->
-                <div class="bg-slate-800 rounded-lg p-5 border-3 border-amber-500 shadow-retro-amber flex flex-col justify-between">
+                <!-- Domain 1: Cybersecurity -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:border-slate-300 transition': theme === 'corporate',
+                    'bg-slate-800 rounded-lg p-5 border-3 border-amber-500 shadow-retro-amber flex flex-col justify-between': theme === 'retro',
+                    'bg-system-panel border border-cyan-500/50 p-5 system-box shadow-system-glow relative': theme === 'system'
+                }">
                     <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-pixel text-[10px] text-amber-400">DOMAIN 01</span>
-                            <span class="bg-amber-500/20 text-amber-300 text-xs px-2 py-0.5 rounded font-monoRetro">CYBERSECURITY</span>
-                        </div>
-                        <h4 class="font-bold text-lg text-white mb-2">Cybersecurity</h4>
-                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-                            Threat identification, attack surface analysis, network safety protocols, and operational protection.
+                        <span :class="{
+                            'text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-1': theme === 'corporate',
+                            'font-pixel text-[10px] text-amber-400 block mb-2': theme === 'retro',
+                            'font-orbitron text-xs text-cyan-400 font-bold block mb-2': theme === 'system'
+                        }">DOMAIN 01</span>
+                        <h4 class="font-bold text-lg mb-2">Cybersecurity[cite: 1, 3]</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-300 mb-4 leading-relaxed">
+                            Threat identification, attack surface analysis, network safety protocols, and operational protection[cite: 1, 3].
                         </p>
                     </div>
-                    <div class="pt-3 border-t border-slate-700">
-                        <span class="block font-monoRetro text-amber-400 text-xs mb-1 uppercase tracking-wider">Supporting Credentials:</span>
-                        <p class="text-xs text-slate-300 font-medium">
-                            Cisco Cyber Threat Management, Cisco Intro to Cybersecurity
-                        </p>
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-700 text-xs">
+                        <span class="font-semibold text-slate-400 uppercase block text-[10px] mb-0.5">Credentials:</span>
+                        <p class="font-medium text-slate-700 dark:text-slate-300">Cisco Cyber Threat Management, Cisco Intro to Cybersecurity[cite: 1, 3]</p>
                     </div>
                 </div>
 
-                <!-- Skill Card 2: Artificial Intelligence -->
-                <div class="bg-slate-800 rounded-lg p-5 border-3 border-cyan-500 shadow-retro-cyan flex flex-col justify-between">
+                <!-- Domain 2: Artificial Intelligence -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:border-slate-300 transition': theme === 'corporate',
+                    'bg-slate-800 rounded-lg p-5 border-3 border-cyan-500 shadow-retro-cyan flex flex-col justify-between': theme === 'retro',
+                    'bg-system-panel border border-purple-500/50 p-5 system-box shadow-system-glow relative': theme === 'system'
+                }">
                     <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-pixel text-[10px] text-cyan-400">DOMAIN 02</span>
-                            <span class="bg-cyan-500/20 text-cyan-300 text-xs px-2 py-0.5 rounded font-monoRetro">AI & ML</span>
-                        </div>
-                        <h4 class="font-bold text-lg text-white mb-2">Artificial Intelligence</h4>
-                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-                            AI principles, machine learning concepts, and practical applications.
+                        <span :class="{
+                            'text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-1': theme === 'corporate',
+                            'font-pixel text-[10px] text-cyan-400 block mb-2': theme === 'retro',
+                            'font-orbitron text-xs text-purple-400 font-bold block mb-2': theme === 'system'
+                        }">DOMAIN 02</span>
+                        <h4 class="font-bold text-lg mb-2">Artificial Intelligence[cite: 4]</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-300 mb-4 leading-relaxed">
+                            AI principles, machine learning concepts, and practical AI implementations[cite: 4].
                         </p>
                     </div>
-                    <div class="pt-3 border-t border-slate-700">
-                        <span class="block font-monoRetro text-cyan-400 text-xs mb-1 uppercase tracking-wider">Supporting Credentials:</span>
-                        <p class="text-xs text-slate-300 font-medium">
-                            IBM SkillsBuild AI Fundamentals
-                        </p>
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-700 text-xs">
+                        <span class="font-semibold text-slate-400 uppercase block text-[10px] mb-0.5">Credentials:</span>
+                        <p class="font-medium text-slate-700 dark:text-slate-300">IBM SkillsBuild AI Fundamentals[cite: 4]</p>
                     </div>
                 </div>
 
-                <!-- Skill Card 3: IT Competency -->
-                <div class="bg-slate-800 rounded-lg p-5 border-3 border-purple-500 shadow-retro-purple flex flex-col justify-between">
+                <!-- Domain 3: IT Architecture -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:border-slate-300 transition': theme === 'corporate',
+                    'bg-slate-800 rounded-lg p-5 border-3 border-purple-500 shadow-retro-purple flex flex-col justify-between': theme === 'retro',
+                    'bg-system-panel border border-cyan-500/50 p-5 system-box shadow-system-glow relative': theme === 'system'
+                }">
                     <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-pixel text-[10px] text-purple-400">DOMAIN 03</span>
-                            <span class="bg-purple-500/20 text-purple-300 text-xs px-2 py-0.5 rounded font-monoRetro">IT ARCHITECTURE</span>
-                        </div>
-                        <h4 class="font-bold text-lg text-white mb-2">IT Competency</h4>
-                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-                            Software design, system architecture, database fundamentals, and IT project management.
+                        <span :class="{
+                            'text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-1': theme === 'corporate',
+                            'font-pixel text-[10px] text-purple-400 block mb-2': theme === 'retro',
+                            'font-orbitron text-xs text-cyan-400 font-bold block mb-2': theme === 'system'
+                        }">DOMAIN 03</span>
+                        <h4 class="font-bold text-lg mb-2">IT Architecture[cite: 2]</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-300 mb-4 leading-relaxed">
+                            Software design, system architecture, database fundamentals, and IT project management[cite: 2].
                         </p>
                     </div>
-                    <div class="pt-3 border-t border-slate-700">
-                        <span class="block font-monoRetro text-purple-400 text-xs mb-1 uppercase tracking-wider">Supporting Credentials:</span>
-                        <p class="text-xs text-slate-300 font-medium">
-                            TOPCIT Level 2 Certification
-                        </p>
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-700 text-xs">
+                        <span class="font-semibold text-slate-400 uppercase block text-[10px] mb-0.5">Credentials:</span>
+                        <p class="font-medium text-slate-700 dark:text-slate-300">TOPCIT Level 2 Credential[cite: 2]</p>
                     </div>
                 </div>
 
-                <!-- Skill Card 4: Systems & Support -->
-                <div class="bg-slate-800 rounded-lg p-5 border-3 border-emerald-500 shadow-retro-emerald flex flex-col justify-between">
+                <!-- Domain 4: Systems & Support -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:border-slate-300 transition': theme === 'corporate',
+                    'bg-slate-800 rounded-lg p-5 border-3 border-emerald-500 shadow-retro-emerald flex flex-col justify-between': theme === 'retro',
+                    'bg-system-panel border border-emerald-500/50 p-5 system-box shadow-system-glow relative': theme === 'system'
+                }">
                     <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="font-pixel text-[10px] text-emerald-400">DOMAIN 04</span>
-                            <span class="bg-emerald-500/20 text-emerald-300 text-xs px-2 py-0.5 rounded font-monoRetro">INFRASTRUCTURE</span>
-                        </div>
-                        <h4 class="font-bold text-lg text-white mb-2">Systems & Support</h4>
-                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-                            Enterprise OS configuration, hardware installation, desktop troubleshooting, and IT service delivery.
+                        <span :class="{
+                            'text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-1': theme === 'corporate',
+                            'font-pixel text-[10px] text-emerald-400 block mb-2': theme === 'retro',
+                            'font-orbitron text-xs text-emerald-400 font-bold block mb-2': theme === 'system'
+                        }">DOMAIN 04</span>
+                        <h4 class="font-bold text-lg mb-2">Systems & Support[cite: 6]</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-300 mb-4 leading-relaxed">
+                            Enterprise OS configuration, hardware installation, desktop troubleshooting, and IT service delivery[cite: 6].
                         </p>
                     </div>
-                    <div class="pt-3 border-t border-slate-700">
-                        <span class="block font-monoRetro text-emerald-400 text-xs mb-1 uppercase tracking-wider">Supporting Credentials:</span>
-                        <p class="text-xs text-slate-300 font-medium">
-                            VXI IT Desktop Engineering Trainee
-                        </p>
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-700 text-xs">
+                        <span class="font-semibold text-slate-400 uppercase block text-[10px] mb-0.5">Credentials:</span>
+                        <p class="font-medium text-slate-700 dark:text-slate-300">VXI IT Desktop Engineering Trainee[cite: 6]</p>
                     </div>
                 </div>
 
-            </div>
-
-            <!-- Compact List Mode -->
-            <div x-show="mode === 'grid'" class="space-y-3">
-                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <span class="font-pixel text-xs text-amber-400 bg-slate-900 p-2 rounded border border-slate-700">01</span>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Cybersecurity</h4>
-                            <p class="text-xs text-slate-300">Threat identification, attack surface analysis, network safety protocols, and operational protection.</p>
-                        </div>
-                    </div>
-                    <span class="bg-amber-500/20 text-amber-300 text-xs px-3 py-1 rounded font-monoRetro border border-amber-500/40 shrink-0">Cisco Cyber Threat Management & Intro</span>
-                </div>
-
-                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <span class="font-pixel text-xs text-cyan-400 bg-slate-900 p-2 rounded border border-slate-700">02</span>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Artificial Intelligence</h4>
-                            <p class="text-xs text-slate-300">AI principles, machine learning concepts, and practical applications.</p>
-                        </div>
-                    </div>
-                    <span class="bg-cyan-500/20 text-cyan-300 text-xs px-3 py-1 rounded font-monoRetro border border-cyan-500/40 shrink-0">IBM SkillsBuild AI Fundamentals</span>
-                </div>
-
-                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <span class="font-pixel text-xs text-purple-400 bg-slate-900 p-2 rounded border border-slate-700">03</span>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">IT Competency</h4>
-                            <p class="text-xs text-slate-300">Software design, system architecture, database fundamentals, and IT project management.</p>
-                        </div>
-                    </div>
-                    <span class="bg-purple-500/20 text-purple-300 text-xs px-3 py-1 rounded font-monoRetro border border-purple-500/40 shrink-0">TOPCIT Level 2 Certification</span>
-                </div>
-
-                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <span class="font-pixel text-xs text-emerald-400 bg-slate-900 p-2 rounded border border-slate-700">04</span>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Systems & Support</h4>
-                            <p class="text-xs text-slate-300">Enterprise OS configuration, hardware installation, desktop troubleshooting, and IT service delivery.</p>
-                        </div>
-                    </div>
-                    <span class="bg-emerald-500/20 text-emerald-300 text-xs px-3 py-1 rounded font-monoRetro border border-emerald-500/40 shrink-0">VXI IT Desktop Engineering Trainee</span>
-                </div>
             </div>
         </section>
 
-        <!-- SECTION 3: CERTIFICATIONS & CREDENTIALS DECK -->
-        <section id="certifications" class="space-y-6">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b-2 border-slate-800 pb-3 gap-2">
+        <!-- SECTION 3: CERTIFICATIONS & CREDENTIALS -->
+        <section id="certifications" class="space-y-5">
+            <div :class="{
+                'border-b border-slate-200 pb-3 flex justify-between items-end': theme === 'corporate',
+                'border-b-2 border-slate-800 pb-3 flex justify-between items-end': theme === 'retro',
+                'border-b border-cyan-500/40 pb-3 flex justify-between items-end': theme === 'system'
+            }">
                 <div>
-                    <h3 class="font-pixel text-sm text-cyan-400 uppercase tracking-wider">CERTIFICATIONS & CREDENTIALS CARDS</h3>
-                    <p class="text-slate-400 text-sm font-sans mt-1">Verified industry certifications and official qualifications</p>
-                </div>
-                <div class="flex items-center space-x-2 text-xs font-monoRetro text-slate-400">
-                    <span class="inline-block w-2 h-2 rounded-full bg-cyan-400"></span>
-                    <span>VERIFIED CREDENTIAL DECK</span>
+                    <h3 :class="{
+                        'text-xl font-bold text-slate-900': theme === 'corporate',
+                        'font-pixel text-sm text-cyan-400 uppercase tracking-wider': theme === 'retro',
+                        'font-orbitron font-bold text-lg text-cyan-400 tracking-wider': theme === 'system'
+                    }">VERIFIED CERTIFICATIONS</h3>
+                    <p class="text-slate-500 text-xs md:text-sm mt-0.5">Industry certifications and credentials</p>
                 </div>
             </div>
 
-            <!-- Card View Mode -->
-            <div x-show="mode === 'cards'" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
 
-                <!-- Certification Card 1 -->
-                <div class="bg-slate-800 rounded-lg border-4 border-amber-500 shadow-retro-amber p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
-                    <div>
-                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
-                            <span class="font-pixel text-[10px] text-amber-400">CARD #01 // SECURITY</span>
-                            <span class="bg-amber-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
-                                MAY 2026
-                            </span>
-                        </div>
-
-                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
-                            <div class="font-pixel text-3xl text-amber-400 mb-1">🛡️</div>
-                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">Cisco Networking Academy</span>
-                        </div>
-
-                        <h4 class="font-bold text-lg text-white mb-2">Cyber Threat Management</h4>
-                        <p class="text-slate-300 text-xs mb-3">
-                            Issued by Cisco Networking Academy / University of Southern Mindanao.
-                        </p>
-                    </div>
-
-                    <div class="pt-3 border-t-2 border-slate-700 flex justify-between items-center">
-                        <span class="text-xs text-amber-400 font-monoRetro font-bold">VERIFIED CERTIFICATION</span>
-                        <span class="text-[10px] text-slate-400 font-monoRetro">MAY 2026</span>
-                    </div>
+                <!-- Cert 1 -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-5 rounded-xl shadow-sm': theme === 'corporate',
+                    'bg-slate-800 rounded-lg border-4 border-amber-500 shadow-retro-amber p-5': theme === 'retro',
+                    'bg-system-panel border-2 border-cyan-500/60 p-5 system-box shadow-system-glow': theme === 'system'
+                }">
+                    <span class="text-xs font-semibold text-slate-400 block mb-1">MAY 2026[cite: 3]</span>
+                    <h4 class="font-bold text-base mb-2">Cyber Threat Management[cite: 3]</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-300 mb-3">
+                        Issued by Cisco Networking Academy / University of Southern Mindanao[cite: 3]. Demonstrates threat identification and threat management protocols[cite: 3].
+                    </p>
+                    <span class="text-[11px] font-mono text-blue-600 dark:text-amber-400 font-semibold block">VERIFIED CERTIFICATE[cite: 3]</span>
                 </div>
 
-                <!-- Certification Card 2 -->
-                <div class="bg-slate-800 rounded-lg border-4 border-cyan-500 shadow-retro-cyan p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
-                    <div>
-                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
-                            <span class="font-pixel text-[10px] text-cyan-400">CARD #02 // SECURITY</span>
-                            <span class="bg-cyan-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
-                                MAR 2026
-                            </span>
-                        </div>
-
-                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
-                            <div class="font-pixel text-3xl text-cyan-400 mb-1">🔒</div>
-                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">Cisco Networking Academy</span>
-                        </div>
-
-                        <h4 class="font-bold text-lg text-white mb-2">Introduction to Cybersecurity</h4>
-                        <p class="text-slate-300 text-xs mb-3">
-                            Issued by Cisco Networking Academy. Fundamental principles of cybersecurity and operational threat defense.
-                        </p>
-                    </div>
-
-                    <div class="pt-3 border-t-2 border-slate-700 flex justify-between items-center">
-                        <span class="text-xs text-cyan-400 font-monoRetro font-bold">VERIFIED CERTIFICATION</span>
-                        <span class="text-[10px] text-slate-400 font-monoRetro">MARCH 2026</span>
-                    </div>
+                <!-- Cert 2 -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-5 rounded-xl shadow-sm': theme === 'corporate',
+                    'bg-slate-800 rounded-lg border-4 border-cyan-500 shadow-retro-cyan p-5': theme === 'retro',
+                    'bg-system-panel border-2 border-cyan-500/60 p-5 system-box shadow-system-glow': theme === 'system'
+                }">
+                    <span class="text-xs font-semibold text-slate-400 block mb-1">MARCH 2026[cite: 1]</span>
+                    <h4 class="font-bold text-base mb-2">Introduction to Cybersecurity[cite: 1]</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-300 mb-3">
+                        Issued by Cisco Networking Academy[cite: 1]. Fundamental principles of cybersecurity and operational threat defense[cite: 1].
+                    </p>
+                    <span class="text-[11px] font-mono text-blue-600 dark:text-cyan-400 font-semibold block">VERIFIED CERTIFICATE[cite: 1]</span>
                 </div>
 
-                <!-- Certification Card 3 -->
-                <div class="bg-slate-800 rounded-lg border-4 border-emerald-500 shadow-retro-emerald p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
-                    <div>
-                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
-                            <span class="font-pixel text-[10px] text-emerald-400">CARD #03 // AI</span>
-                            <span class="bg-emerald-500 text-slate-950 font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
-                                FEB 2026
-                            </span>
-                        </div>
-
-                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
-                            <div class="font-pixel text-3xl text-emerald-400 mb-1">🤖</div>
-                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">IBM SkillsBuild</span>
-                        </div>
-
-                        <h4 class="font-bold text-lg text-white mb-2">Artificial Intelligence Fundamentals</h4>
-                        <p class="text-slate-300 text-xs mb-3">
-                            Issued by IBM SkillsBuild. Comprehensive mastery of foundational AI principles, machine learning concepts, and practical applications.
-                        </p>
-                    </div>
-
-                    <div class="pt-3 border-t-2 border-slate-700 flex justify-between items-center">
-                        <span class="text-xs text-emerald-400 font-monoRetro font-bold">VERIFIED CERTIFICATION</span>
-                        <span class="text-[10px] text-slate-400 font-monoRetro">FEB 2026</span>
-                    </div>
+                <!-- Cert 3 -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-5 rounded-xl shadow-sm': theme === 'corporate',
+                    'bg-slate-800 rounded-lg border-4 border-emerald-500 shadow-retro-emerald p-5': theme === 'retro',
+                    'bg-system-panel border-2 border-purple-500/60 p-5 system-box shadow-system-glow': theme === 'system'
+                }">
+                    <span class="text-xs font-semibold text-slate-400 block mb-1">FEBRUARY 2026[cite: 4]</span>
+                    <h4 class="font-bold text-base mb-2">Artificial Intelligence Fundamentals[cite: 4]</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-300 mb-3">
+                        Issued by IBM SkillsBuild[cite: 4]. Verified badge confirming foundational knowledge in machine learning and AI ethics[cite: 4].
+                    </p>
+                    <span class="text-[11px] font-mono text-blue-600 dark:text-emerald-400 font-semibold block">VERIFIED CERTIFICATE[cite: 4]</span>
                 </div>
 
-                <!-- Certification Card 4 -->
-                <div class="bg-slate-800 rounded-lg border-4 border-purple-500 shadow-retro-purple p-5 flex flex-col justify-between relative group hover:-translate-y-1 transition duration-200">
-                    <div>
-                        <div class="flex justify-between items-center border-b-2 border-slate-700 pb-2 mb-3">
-                            <span class="font-pixel text-[10px] text-purple-400">CARD #04 // STANDARDS</span>
-                            <span class="bg-purple-500 text-white font-bold text-[10px] px-2 py-0.5 rounded font-pixel">
-                                DEC 2025
-                            </span>
-                        </div>
-
-                        <div class="bg-slate-900 border-2 border-slate-700 rounded p-4 mb-4 text-center relative overflow-hidden">
-                            <div class="font-pixel text-3xl text-purple-400 mb-1">🎓</div>
-                            <span class="font-monoRetro text-slate-400 text-xs uppercase tracking-widest">IITP Official Credential</span>
-                        </div>
-
-                        <h4 class="font-bold text-lg text-white mb-2">TOPCIT Level 2 Credential</h4>
-                        <p class="text-slate-300 text-xs mb-3">
-                            Issued by Institute for Information & Communications Technology Promotion. Standardized assessment of IT competency and software design.
-                        </p>
-                    </div>
-
-                    <div class="pt-3 border-t-2 border-slate-700 flex justify-between items-center">
-                        <span class="text-xs text-purple-400 font-monoRetro font-bold">VERIFIED CREDENTIAL</span>
-                        <span class="text-[10px] text-slate-400 font-monoRetro">DEC 2025</span>
-                    </div>
+                <!-- Cert 4 -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-5 rounded-xl shadow-sm': theme === 'corporate',
+                    'bg-slate-800 rounded-lg border-4 border-purple-500 shadow-retro-purple p-5': theme === 'retro',
+                    'bg-system-panel border-2 border-amber-500/60 p-5 system-box shadow-system-glow': theme === 'system'
+                }">
+                    <span class="text-xs font-semibold text-slate-400 block mb-1">DECEMBER 2025[cite: 2]</span>
+                    <h4 class="font-bold text-base mb-2">TOPCIT Level 2 Credential[cite: 2]</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-300 mb-3">
+                        Issued by IITP (Institute for Information & Communications Technology Promotion)[cite: 2]. Assessment evaluating software design and architecture[cite: 2].
+                    </p>
+                    <span class="text-[11px] font-mono text-blue-600 dark:text-purple-400 font-semibold block">SCORE: 179 / LEVEL 2[cite: 2]</span>
                 </div>
 
-            </div>
-
-            <!-- Compact List View Mode -->
-            <div x-show="mode === 'grid'" class="space-y-3">
-                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <span class="font-pixel text-xs text-amber-400 bg-slate-900 p-2 rounded border border-slate-700">01</span>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Cyber Threat Management</h4>
-                            <p class="text-xs text-slate-300">Cisco Networking Academy / University of Southern Mindanao</p>
-                        </div>
-                    </div>
-                    <span class="text-amber-400 font-monoRetro text-sm">MAY 2026</span>
-                </div>
-
-                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <span class="font-pixel text-xs text-cyan-400 bg-slate-900 p-2 rounded border border-slate-700">02</span>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Introduction to Cybersecurity</h4>
-                            <p class="text-xs text-slate-300">Cisco Networking Academy</p>
-                        </div>
-                    </div>
-                    <span class="text-cyan-400 font-monoRetro text-sm">MARCH 2026</span>
-                </div>
-
-                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <span class="font-pixel text-xs text-emerald-400 bg-slate-900 p-2 rounded border border-slate-700">03</span>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Artificial Intelligence Fundamentals</h4>
-                            <p class="text-xs text-slate-300">IBM SkillsBuild</p>
-                        </div>
-                    </div>
-                    <span class="text-emerald-400 font-monoRetro text-sm">FEBRUARY 2026</span>
-                </div>
-
-                <div class="bg-slate-800 border-2 border-slate-700 rounded-lg p-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <span class="font-pixel text-xs text-purple-400 bg-slate-900 p-2 rounded border border-slate-700">04</span>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">TOPCIT Level 2 Credential</h4>
-                            <p class="text-xs text-slate-300">Institute for Information & Communications Technology Promotion</p>
-                        </div>
-                    </div>
-                    <span class="text-purple-400 font-monoRetro text-sm">DECEMBER 2025</span>
-                </div>
             </div>
         </section>
 
-        <!-- SECTION 4: PRACTICAL EXPERIENCE & LEADERSHIP CARDS -->
-        <section class="space-y-4">
-            <div class="flex justify-between items-end border-b-2 border-slate-800 pb-3">
+        <!-- SECTION 4: PRACTICAL EXPERIENCE & LEADERSHIP -->
+        <section class="space-y-5">
+            <div :class="{
+                'border-b border-slate-200 pb-3 flex justify-between items-end': theme === 'corporate',
+                'border-b-2 border-slate-800 pb-3 flex justify-between items-end': theme === 'retro',
+                'border-b border-cyan-500/40 pb-3 flex justify-between items-end': theme === 'system'
+            }">
                 <div>
-                    <h3 class="font-pixel text-sm text-emerald-400 uppercase tracking-wider">PRACTICAL EXPERIENCE & LEADERSHIP</h3>
-                    <p class="text-slate-400 text-sm font-sans mt-1">Enterprise technical experience and leadership credentials</p>
+                    <h3 :class="{
+                        'text-xl font-bold text-slate-900': theme === 'corporate',
+                        'font-pixel text-sm text-emerald-400 uppercase tracking-wider': theme === 'retro',
+                        'font-orbitron font-bold text-lg text-cyan-400 tracking-wider': theme === 'system'
+                    }">PRACTICAL EXPERIENCE & LEADERSHIP</h3>
+                    <p class="text-slate-500 text-xs md:text-sm mt-0.5">Technical operations and keynote advocacy</p>
                 </div>
-                <span class="font-monoRetro text-slate-400 text-lg">RECORD FILE: #EXP-2026</span>
             </div>
 
             <div class="space-y-4">
 
-                <!-- Experience Card 1 -->
-                <div class="bg-slate-800 rounded-lg border-2 border-slate-700 p-6 shadow-retro relative">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3 border-b border-slate-700 pb-3">
+                <!-- Experience 1 -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-6 rounded-xl shadow-sm': theme === 'corporate',
+                    'bg-slate-800 rounded-lg border-2 border-slate-700 p-6 shadow-retro': theme === 'retro',
+                    'bg-system-panel border-2 border-cyan-500/60 p-6 system-box shadow-system-glow': theme === 'system'
+                }">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
                         <div>
-                            <span class="text-xs font-monoRetro text-emerald-400 uppercase tracking-widest">[PRACTICAL EXPERIENCE] • MAY – JULY 2026</span>
-                            <h4 class="font-bold text-xl text-white">IT Desktop Engineer Trainee @ VXI Global Holdings B.V.</h4>
+                            <span class="text-xs font-bold text-blue-600 dark:text-cyan-400 uppercase tracking-wider block">MAY – JULY 2026[cite: 6]</span>
+                            <h4 class="font-bold text-xl text-slate-900 dark:text-white">IT Desktop Engineer Trainee @ VXI Global Holdings B.V.[cite: 6]</h4>
                         </div>
-                        <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs px-3 py-1 rounded font-monoRetro">260 HOURS</span>
+                        <span :class="{
+                            'bg-slate-100 text-slate-800 border-slate-200': theme === 'corporate',
+                            'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 font-monoRetro': theme === 'retro',
+                            'bg-cyan-500/20 text-cyan-300 border-cyan-400/40 font-systemMono': theme === 'system'
+                        }" class="text-xs px-3 py-1 rounded font-bold border">
+                            260 HOURS LOGGED[cite: 6]
+                        </span>
                     </div>
-                    <ul class="text-slate-300 text-sm space-y-2 list-disc list-inside">
-                        <li>Completed 260 hours of technical support, diagnosing hardware/software issues, and maintaining desktop infrastructure in an enterprise call center environment.</li>
-                        <li>Provided rapid technical troubleshooting and service delivery to maintain maximum operational uptime for enterprise staff.</li>
-                        <li>Managed enterprise operating system configurations, software deployments, and desktop network setup.</li>
+                    <ul class="text-slate-600 dark:text-slate-300 text-sm space-y-1.5 list-disc list-inside">
+                        <li>Completed 260 hours of technical support, diagnosing hardware/software issues, and maintaining desktop infrastructure in an enterprise call center[cite: 6].</li>
+                        <li>Provided rapid technical troubleshooting and service delivery to maintain maximum operational uptime for enterprise staff[cite: 6].</li>
+                        <li>Managed enterprise operating system configurations, software deployments, and desktop network setup[cite: 6].</li>
                     </ul>
                 </div>
 
-                <!-- Leadership & Public Speaking Card -->
-                <div class="bg-slate-800 rounded-lg border-2 border-slate-700 p-6 shadow-retro relative">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3 border-b border-slate-700 pb-3">
+                <!-- Experience 2 / Speaking -->
+                <div :class="{
+                    'bg-white border border-slate-200 p-6 rounded-xl shadow-sm': theme === 'corporate',
+                    'bg-slate-800 rounded-lg border-2 border-slate-700 p-6 shadow-retro': theme === 'retro',
+                    'bg-system-panel border-2 border-purple-500/60 p-6 system-box shadow-system-glow': theme === 'system'
+                }">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-3">
                         <div>
-                            <span class="text-xs font-monoRetro text-amber-400 uppercase tracking-widest">[LEADERSHIP & ADVOCACY] • ONGOING</span>
-                            <h4 class="font-bold text-xl text-white">Public Speaking & Technical Advocacy</h4>
+                            <span class="text-xs font-bold text-blue-600 dark:text-amber-400 uppercase tracking-wider block">MARCH 2026[cite: 5]</span>
+                            <h4 class="font-bold text-xl text-slate-900 dark:text-white">Featured Keynote Speaker @ Cotabato 1st ICT Summit[cite: 5]</h4>
                         </div>
-                        <span class="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs px-3 py-1 rounded font-monoRetro">SPEAKER CREDENTIALS</span>
+                        <span :class="{
+                            'bg-slate-100 text-slate-800 border-slate-200': theme === 'corporate',
+                            'bg-amber-500/20 text-amber-300 border-amber-500/40 font-monoRetro': theme === 'retro',
+                            'bg-purple-500/20 text-purple-300 border-purple-400/40 font-systemMono': theme === 'system'
+                        }" class="text-xs px-3 py-1 rounded font-bold border">
+                            TECHNICAL ADVOCACY[cite: 5]
+                        </span>
                     </div>
-                    <ul class="text-slate-300 text-sm space-y-2 list-disc list-inside">
-                        <li>Demonstrated public speaking credentials, delivering presentations and technical advocacy on emerging technologies and cybersecurity best practices.</li>
-                        <li>Fostered knowledge sharing across IT teams, translating complex cyber threat and AI topics into actionable, accessible insights.</li>
+                    <ul class="text-slate-600 dark:text-slate-300 text-sm space-y-1.5 list-disc list-inside">
+                        <li>Delivered a keynote address titled <em>"Digital Innovation: Empowering Inclusive Growth in Cotabato Province"</em>[cite: 5].</li>
+                        <li>Fostered knowledge sharing across regional technology leaders, government representatives, and students on digital adoption and infrastructure growth[cite: 5].</li>
                     </ul>
                 </div>
 
             </div>
         </section>
 
-        <!-- SECTION 5: CONTACT CARD & FOOTER -->
-        <section id="contact" class="bg-gradient-to-r from-slate-800 to-slate-900 border-4 border-amber-500 rounded-lg p-8 shadow-retro-amber text-center space-y-5">
-            <div class="inline-block bg-amber-500/20 text-amber-300 font-pixel text-xs px-3 py-1 rounded border border-amber-500/40">
-                CARD #99 // CONTACT & ENGAGEMENT
-            </div>
-
-            <h3 class="font-pixel text-xl sm:text-2xl text-white tracking-wide">
+        <!-- SECTION 5: CONTACT & FOOTER -->
+        <section id="contact" :class="{
+            'bg-slate-900 text-white rounded-2xl p-8 text-center space-y-4 shadow-md': theme === 'corporate',
+            'bg-gradient-to-r from-slate-800 to-slate-900 border-4 border-amber-500 rounded-lg p-8 shadow-retro-amber text-center space-y-5': theme === 'retro',
+            'bg-gradient-to-b from-system-panel to-slate-950 border-2 border-cyan-400 p-8 system-box shadow-system-glow-lg text-center space-y-5': theme === 'system'
+        }">
+            <h3 :class="{
+                'text-2xl font-bold': theme === 'corporate',
+                'font-pixel text-xl sm:text-2xl text-white tracking-wide': theme === 'retro',
+                'font-orbitron font-black text-2xl md:text-3xl text-white tracking-wider': theme === 'system'
+            }">
                 LET'S CONNECT
             </h3>
 
-            <p class="text-slate-300 text-sm max-w-xl mx-auto leading-relaxed">
-                Interested in collaborating or discussing enterprise infrastructure, cybersecurity, or AI implementations? Reach out today!
+            <p :class="{
+                'text-slate-300 text-sm max-w-xl mx-auto': theme === 'corporate',
+                'text-slate-300 text-sm max-w-xl mx-auto leading-relaxed': theme === 'retro',
+                'text-slate-300 text-sm max-w-xl mx-auto font-sans leading-relaxed': theme === 'system'
+            }">
+                Interested in collaborating or discussing enterprise infrastructure, cybersecurity, or AI implementations? Reach out today![cite: 1, 3, 4, 6]
             </p>
 
-            <div class="flex flex-wrap justify-center gap-4 pt-2">
-                <a href="mailto:ralph.omega@example.com" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-pixel text-xs px-6 py-3.5 rounded shadow-retro transition">
+            <div class="pt-2">
+                <a href="mailto:ralph.omega@example.com" :class="{
+                    'bg-white text-slate-900 hover:bg-slate-100 font-semibold px-6 py-3 rounded-lg text-sm transition inline-block': theme === 'corporate',
+                    'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold font-pixel text-xs px-6 py-3.5 rounded shadow-retro transition inline-block': theme === 'retro',
+                    'bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-orbitron font-black text-sm px-8 py-4 border border-cyan-200 shadow-system-glow transition inline-block': theme === 'system'
+                }">
                     ✉ GET IN TOUCH
                 </a>
             </div>
 
-            <div class="pt-6 border-t border-slate-800 text-slate-500 text-xs flex justify-between items-center max-w-2xl mx-auto font-monoRetro">
-                <span>RALPH JADE A. OMEGA PORTFOLIO © 2026</span>
-                <span>DESIGNED WITH RETRO CARD SYSTEM</span>
+            <div class="pt-6 border-t border-slate-700/50 text-slate-400 text-xs flex flex-col sm:flex-row justify-between items-center max-w-2xl mx-auto gap-2">
+                <span>RALPH JADE A. OMEGA © 2026[cite: 1, 2, 3, 4, 5, 6]</span>
+                <span x-text="'ACTIVE THEME: ' + theme.toUpperCase()"></span>
             </div>
         </section>
 
